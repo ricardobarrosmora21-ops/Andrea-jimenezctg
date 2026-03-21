@@ -127,14 +127,17 @@
                 shape:  'rect',
                 label:  'paypal'
             },
-            createOrder: function(data, actions) {
-                // Verificar si el formulario es válido antes de crear la orden
+            onClick: function(data, actions) {
                 const form = document.getElementById('shipping-form');
                 if (!form.checkValidity()) {
+                    form.reportValidity(); // Muestra mensajes nativos del navegador
                     alert("Por favor completa todos los datos de envío antes de pagar.");
                     return actions.reject();
+                } else {
+                    return actions.resolve();
                 }
-
+            },
+            createOrder: function(data, actions) {
                 return actions.order.create({
                     purchase_units: [{
                         amount: {

@@ -1,0 +1,12 @@
+ID: 3, Nombre: Accesorios
+  Imagen: /media/productos/Accesorios.avif
+  Barcode: /media/barcodes/barcode-AJ-000003_04ORAiO.png
+
+ID: 1, Nombre: Enterizo negro
+  Imagen: /media/productos/enterizo.avif
+  Barcode: /media/barcodes/barcode-AJ-000001_TA55Nvb.png
+
+ID: 2, Nombre: Carteras & Bolsos
+  Imagen: /media/productos/bolsos.avif
+  Barcode: /media/barcodes/barcode-AJ-000002_UEpqqCV.png
+

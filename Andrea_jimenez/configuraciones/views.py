@@ -473,7 +473,7 @@ def confirmar_compra(request):
 
 
 @csrf_exempt
-@login_required
+# @login_required
 def paypal_capture(request):
     if request.method == "POST":
         try:
