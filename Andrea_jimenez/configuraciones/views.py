@@ -41,7 +41,7 @@ def es_cliente(user):
 @login_required
 @user_passes_test(es_cliente)
 def panel_cliente(request):
-    cliente = get_object_or_404(Cliente, user=request.user)
+    cliente, _ = Cliente.objects.get_or_create(user=request.user)
     return render(request, "cliente/panel_cliente.html", {"cliente": cliente})
 
 
@@ -223,7 +223,7 @@ def distribuidores(request):
 @login_required
 @user_passes_test(es_cliente)
 def agregar_al_carrito(request, prenda_id):
-    cliente = get_object_or_404(Cliente, user=request.user)
+    cliente, _ = Cliente.objects.get_or_create(user=request.user)
     carrito, created = CarritoDeCompras.objects.get_or_create(cliente=cliente)
 
     producto = get_object_or_404(Prenda, id=prenda_id)
@@ -264,7 +264,7 @@ def agregar_al_carrito(request, prenda_id):
 @login_required
 @user_passes_test(es_cliente)
 def carrito(request):
-    cliente = get_object_or_404(Cliente, user=request.user)
+    cliente, _ = Cliente.objects.get_or_create(user=request.user)
     carrito, created = CarritoDeCompras.objects.get_or_create(cliente=cliente)
 
     items = carrito.items.all()
@@ -313,7 +313,7 @@ def eliminar_item_carrito(request, item_id):
 @login_required
 @user_passes_test(es_cliente)
 def checkout(request):
-    cliente = get_object_or_404(Cliente, user=request.user)
+    cliente, _ = Cliente.objects.get_or_create(user=request.user)
     carrito = get_object_or_404(CarritoDeCompras, cliente=cliente)
     items = [i for i in carrito.items.select_related("prenda").all() if i.prenda]
 
@@ -337,7 +337,7 @@ def checkout(request):
 @login_required
 @user_passes_test(es_cliente)
 def confirmar_compra(request):
-    cliente = get_object_or_404(Cliente, user=request.user)
+    cliente, _ = Cliente.objects.get_or_create(user=request.user)
     carrito = get_object_or_404(CarritoDeCompras, cliente=cliente)
     items = [i for i in carrito.items.select_related("prenda", "variacion").all() if i.prenda]
 
@@ -481,7 +481,7 @@ def paypal_capture(request):
             order_id = data.get("orderID")
             shipping_data = data.get("shippingData", {})
             
-            cliente = get_object_or_404(Cliente, user=request.user)
+            cliente, _ = Cliente.objects.get_or_create(user=request.user)
             carrito = get_object_or_404(CarritoDeCompras, cliente=cliente)
             items = [i for i in carrito.items.select_related("prenda", "variacion").all() if i.prenda]
             
@@ -1085,14 +1085,14 @@ def eliminar_categoria(request, categoria_id):
 @login_required
 @user_passes_test(es_cliente)
 def perfil_cliente(request):
-    cliente = get_object_or_404(Cliente, user=request.user)
+    cliente, _ = Cliente.objects.get_or_create(user=request.user)
     return render(request, "cliente/perfil.html", {"cliente": cliente})
 
 
 @login_required
 @user_passes_test(es_cliente)
 def editar_perfil(request):
-    cliente = get_object_or_404(Cliente, user=request.user)
+    cliente, _ = Cliente.objects.get_or_create(user=request.user)
 
     if request.method == "POST":
         cliente.user.first_name = request.POST.get("first_name", "")
@@ -1117,7 +1117,7 @@ def editar_perfil(request):
 @login_required
 @user_passes_test(es_cliente)
 def mis_ventas(request):
-    cliente = get_object_or_404(Cliente, user=request.user)
+    cliente, _ = Cliente.objects.get_or_create(user=request.user)
     ventas = Venta.objects.filter(cliente=cliente).select_related('pago__pedido').order_by("-fecha_venta")
 
     return render(request, "cliente/mis_ventas.html", {"ventas": ventas})
