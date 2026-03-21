@@ -583,3 +583,8 @@ INFO 2026-03-20 21:16:43,527 basehttp "GET /media/barcodes/barcode-AJ-000002_UEp
 INFO 2026-03-20 21:16:43,528 basehttp "GET /media/barcodes/barcode-AJ-000001_TA55Nvb.png HTTP/1.1" 304 0
 INFO 2026-03-20 21:16:43,529 basehttp "GET /media/barcodes/barcode-AJ-000003_04ORAiO.png HTTP/1.1" 200 4228
 INFO 2026-03-20 21:16:50,374 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 77079
+INFO 2026-03-20 21:48:44,063 autoreload Watching for file changes with StatReloader
+INFO 2026-03-20 21:48:50,891 basehttp "GET / HTTP/1.1" 200 8719
+INFO 2026-03-20 21:48:51,036 basehttp "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-03-20 21:48:51,037 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+WARNING 2026-03-20 21:48:51,060 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 404 1871
