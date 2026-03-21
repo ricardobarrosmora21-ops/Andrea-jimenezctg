@@ -561,10 +561,14 @@ def paypal_capture(request):
                     )
                     email.content_subtype = "html"
                     if len(pdf_content) > 0:
+                        logger.info(f"Intentando enviar correo PayPal a {cliente.user.email}...")
                         email.attach(f"Factura_{venta.id}.pdf", pdf_content, "application/pdf")
-                        email.send(fail_silently=True)
+                        email.send(fail_silently=False)
+                        logger.info("Correo PayPal enviado exitosamente.")
                 except Exception as e:
+                    import traceback
                     logger.error(f"Error correo PayPal: {str(e)}")
+                    logger.error(traceback.format_exc())
             
             return JsonResponse({"status": "success", "venta_id": venta.id})
             
