@@ -1,0 +1,91 @@
+﻿git : remote: error: 
+GH013: Repository rule 
+violations found for 
+refs/heads/main.        
+En línea: 1 Carácter: 1
++ git push > 
+push_error.log 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (r  
+  emote: error: ...s/ma   
+ in.        :String) [    
+], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+remote: 
+remote: - GITHUB PUSH 
+PROTECTION        
+remote:   ÔÇöÔÇöÔÇöÔÇöÔÇöÔ
+ÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇö
+ÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇ
+öÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔ
+ÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇö
+ÔÇö        
+remote:     Resolve the 
+following violations 
+before pushing again      
+  
+remote: 
+remote:     - Push cannot 
+contain secrets        
+remote: 
+remote:             
+remote:      (?) Learn 
+how to resolve a blocked 
+push        
+remote:      https://docs.
+github.com/code-security/s
+ecret-scanning/working-wit
+h-secret-scanning-and-push
+-protection/working-with-p
+ush-protection-from-the-co
+mmand-line#resolving-a-blo
+cked-push        
+remote:             
+remote:             
+remote:       ÔÇöÔÇö 
+Sendinblue SMTP Key ÔÇöÔÇö
+ÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇ
+öÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔ
+ÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇöÔÇö
+ÔÇöÔÇöÔÇö        
+remote:        locations: 
+       
+remote:          - 
+commit: b8acd70c0d279e4343
+fc0c6fa4f6c601fe2ad59e    
+    
+remote:            path: 
+Andrea_jimenez/.env:17    
+    
+remote:             
+remote:        (?) To 
+push, remove secret from 
+commit(s) or follow this 
+URL to allow the secret.  
+      
+remote:        https://git
+hub.com/ricardobarrosmora2
+1-ops/Andrea-jimenezctg/se
+curity/secret-scanning/unb
+lock-secret/3BGvhKuRnscyCX
+Mcn4b3w3d3k0n        
+remote:             
+remote: 
+remote: 
+To https://github.com/rica
+rdobarrosmora21-ops/Andrea
+-jimenezctg.git
+ ! [remote rejected] main 
+-> main (push declined 
+due to repository rule 
+violations)
+error: failed to push 
+some refs to 'https://gith
+ub.com/ricardobarrosmora21
+-ops/Andrea-jimenezctg.git
+'

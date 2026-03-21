@@ -161,6 +161,7 @@ class Prenda(models.Model):
             
             # Guardamos la imagen
             filename = f"barcode-{self.codigo_barras}.png"
+            rv.seek(0)
             self.barcode_image.save(filename, File(rv), save=False)
             # Actualizamos solo la imagen
             Prenda.objects.filter(id=self.id).update(barcode_image=self.barcode_image.name)
@@ -207,6 +208,7 @@ class VariacionPrenda(models.Model):
             code = COD128(self.codigo_barras, writer=ImageWriter())
             code.write(rv, options={"module_height": 10.0, "font_size": 10, "text_distance": 4.0, "quiet_zone": 5.0})
             filename = f"barcode-v-{self.codigo_barras}.png"
+            rv.seek(0)
             self.barcode_image.save(filename, File(rv), save=False)
             VariacionPrenda.objects.filter(id=self.id).update(barcode_image=self.barcode_image.name)
 
