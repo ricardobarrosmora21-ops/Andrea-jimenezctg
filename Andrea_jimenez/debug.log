@@ -523,3 +523,63 @@ INFO 2026-03-13 13:23:37,318 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1"
 INFO 2026-03-13 13:23:42,754 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
 INFO 2026-03-13 13:23:58,073 basehttp - Broken pipe from ('127.0.0.1', 52674)
 INFO 2026-03-13 13:23:58,321 basehttp - Broken pipe from ('127.0.0.1', 57454)
+INFO 2026-03-20 20:48:12,021 autoreload Watching for file changes with StatReloader
+INFO 2026-03-20 20:48:18,732 basehttp "GET / HTTP/1.1" 200 9231
+WARNING 2026-03-20 20:48:18,835 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 404 1871
+INFO 2026-03-20 20:48:19,148 basehttp "GET /static/css/home.css HTTP/1.1" 200 25288
+INFO 2026-03-20 20:48:22,351 basehttp "GET /static/img/favicon-round.png HTTP/1.1" 200 436719
+INFO 2026-03-20 20:48:36,825 basehttp "GET /tienda/ HTTP/1.1" 200 9925
+INFO 2026-03-20 20:48:36,887 basehttp "GET /static/css/tienda.css HTTP/1.1" 200 23656
+INFO 2026-03-20 20:48:36,888 basehttp "GET /static/css/oferta.css HTTP/1.1" 200 748
+INFO 2026-03-20 20:48:36,905 basehttp "GET /media/barcodes/barcode-AJ-000002_UEpqqCV.png HTTP/1.1" 200 4044
+INFO 2026-03-20 20:48:36,906 basehttp "GET /media/barcodes/barcode-AJ-000001_TA55Nvb.png HTTP/1.1" 200 3537
+INFO 2026-03-20 20:48:42,157 basehttp "GET /agregar/2/ HTTP/1.1" 302 0
+INFO 2026-03-20 20:48:42,344 basehttp "GET /carrito/ HTTP/1.1" 200 3467
+INFO 2026-03-20 20:48:42,401 basehttp "GET /static/css/carrito.css HTTP/1.1" 200 11866
+INFO 2026-03-20 20:48:44,746 basehttp "GET /checkout/ HTTP/1.1" 200 8443
+INFO 2026-03-20 20:51:13,558 basehttp "GET /checkout/ HTTP/1.1" 200 8443
+INFO 2026-03-20 20:51:13,608 basehttp "GET /static/css/carrito.css HTTP/1.1" 200 11866
+INFO 2026-03-20 20:51:13,625 basehttp "GET /static/img/logo.png HTTP/1.1" 200 14988
+INFO 2026-03-20 20:51:14,925 basehttp "GET /static/img/favicon-round.png HTTP/1.1" 200 436719
+INFO 2026-03-20 20:53:38,268 autoreload C:\Users\FAMILIABARROS\Downloads\Andrea_jimenez\Andrea_jimenez\Andrea_jimenez\settings.py changed, reloading.
+INFO 2026-03-20 20:53:40,890 autoreload Watching for file changes with StatReloader
+INFO 2026-03-20 20:54:08,411 basehttp "GET /checkout/ HTTP/1.1" 200 8443
+INFO 2026-03-20 20:54:08,837 basehttp "GET /static/css/carrito.css HTTP/1.1" 200 11866
+INFO 2026-03-20 20:54:08,841 basehttp "GET /static/img/logo.png HTTP/1.1" 200 14988
+INFO 2026-03-20 20:54:10,249 basehttp "GET /static/img/favicon-round.png HTTP/1.1" 200 436719
+INFO 2026-03-20 20:56:03,543 basehttp "POST /paypal/capture/ HTTP/1.1" 200 37
+INFO 2026-03-20 20:56:03,757 basehttp "GET /factura/10/ HTTP/1.1" 200 8223
+INFO 2026-03-20 20:56:03,815 basehttp "GET /media/barcodes/barcode-AJ-000002_UEpqqCV.png HTTP/1.1" 304 0
+INFO 2026-03-20 21:08:21,327 autoreload Watching for file changes with StatReloader
+INFO 2026-03-20 21:10:37,352 autoreload Watching for file changes with StatReloader
+INFO 2026-03-20 21:12:26,261 autoreload Watching for file changes with StatReloader
+INFO 2026-03-20 21:14:04,669 autoreload Watching for file changes with StatReloader
+INFO 2026-03-20 21:15:33,011 autoreload Watching for file changes with StatReloader
+INFO 2026-03-20 21:15:38,005 basehttp "GET / HTTP/1.1" 200 9231
+INFO 2026-03-20 21:15:38,148 basehttp "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-03-20 21:15:38,155 basehttp "GET /static/img/logo.png HTTP/1.1" 304 0
+WARNING 2026-03-20 21:15:38,247 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 404 1871
+INFO 2026-03-20 21:15:53,002 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-20 21:15:53,223 basehttp "GET /static/css/panel_cliente.css HTTP/1.1" 200 3458
+INFO 2026-03-20 21:16:03,361 basehttp "GET / HTTP/1.1" 200 9231
+WARNING 2026-03-20 21:16:03,418 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 404 1871
+INFO 2026-03-20 21:16:09,124 basehttp "GET / HTTP/1.1" 200 9231
+WARNING 2026-03-20 21:16:09,239 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 404 1871
+INFO 2026-03-20 21:16:25,740 basehttp "GET /panel_admin HTTP/1.1" 301 0
+INFO 2026-03-20 21:16:25,882 basehttp "GET /panel_admin/ HTTP/1.1" 302 0
+INFO 2026-03-20 21:16:25,905 basehttp "GET /login/?next=/panel_admin/ HTTP/1.1" 200 2210
+INFO 2026-03-20 21:16:25,990 basehttp "GET /static/css/login.css HTTP/1.1" 200 7936
+INFO 2026-03-20 21:16:25,996 basehttp "GET /static/img/logo.jpg HTTP/1.1" 200 27130
+INFO 2026-03-20 21:16:40,469 basehttp "POST /login/?next=/panel_admin/ HTTP/1.1" 302 0
+INFO 2026-03-20 21:16:40,719 basehttp "GET /panel_admin/ HTTP/1.1" 200 23458
+INFO 2026-03-20 21:16:40,774 basehttp "GET /static/css/admin/admin_global.css HTTP/1.1" 200 30403
+INFO 2026-03-20 21:16:40,788 basehttp "GET /static/css/admin/panel_admin.css HTTP/1.1" 200 6973
+WARNING 2026-03-20 21:16:41,896 log Not Found: /favicon.ico
+WARNING 2026-03-20 21:16:41,896 basehttp "GET /favicon.ico HTTP/1.1" 404 10963
+INFO 2026-03-20 21:16:43,470 basehttp "GET /gestion_productos/ HTTP/1.1" 200 32651
+INFO 2026-03-20 21:16:43,519 basehttp "GET /static/css/admin/gestion_general.css HTTP/1.1" 200 18152
+INFO 2026-03-20 21:16:43,520 basehttp "GET /media/productos/Accesorios.avif HTTP/1.1" 200 43202
+INFO 2026-03-20 21:16:43,527 basehttp "GET /media/barcodes/barcode-AJ-000002_UEpqqCV.png HTTP/1.1" 304 0
+INFO 2026-03-20 21:16:43,528 basehttp "GET /media/barcodes/barcode-AJ-000001_TA55Nvb.png HTTP/1.1" 304 0
+INFO 2026-03-20 21:16:43,529 basehttp "GET /media/barcodes/barcode-AJ-000003_04ORAiO.png HTTP/1.1" 200 4228
+INFO 2026-03-20 21:16:50,374 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 77079

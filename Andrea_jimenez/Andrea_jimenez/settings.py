@@ -168,3 +168,6 @@ PAYPAL_MODE = os.getenv('PAYPAL_MODE', 'sandbox') # 'sandbox' or 'live'
 PAYPAL_CURRENCY = 'USD'
 
 WHATSAPP_NUMBER = os.getenv('WHATSAPP_NUMBER', '573014717412')
+
+# Permitir popups de origen cruzado para que PayPal funcione correctamente
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
