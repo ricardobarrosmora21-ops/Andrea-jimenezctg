@@ -425,7 +425,7 @@ def confirmar_compra(request):
                     'venta': venta,
                     'total': total,
                     'metodo_pago': pago.metodo,
-                    'site_url': settings.SITE_URL,
+                    'site_url': request.build_absolute_uri('/')[:-1],
                     'current_year': datetime.datetime.now().year,
                 }
                 
@@ -549,7 +549,7 @@ def paypal_capture(request):
                         'venta': venta,
                         'total': total,
                         'metodo_pago': "PayPal",
-                        'site_url': settings.SITE_URL,
+                        'site_url': request.build_absolute_uri('/')[:-1],
                         'current_year': datetime.datetime.now().year,
                     }
                     html_content = render_to_string('email/email_factura.html', context)
@@ -820,9 +820,16 @@ def crear_producto(request):
     if request.method == "POST":
         nombre = request.POST.get("nombre", "").strip()
         descripcion = request.POST.get("descripcion", "").strip()
-        precio = float(request.POST.get("precio", 0))
-        precio_descuento = request.POST.get("precio_descuento")
-        stock = int(request.POST.get("stock", 0))
+        
+        precio_str = request.POST.get("precio", "0").strip()
+        precio = float(precio_str) if precio_str else 0.0
+        
+        pd_str = request.POST.get("precio_descuento", "").strip()
+        precio_descuento = float(pd_str) if pd_str else None
+        
+        stock_str = request.POST.get("stock", "0").strip()
+        stock = int(stock_str) if stock_str else 0
+        
         categoria_id = request.POST.get("categoria")
         imagen = request.FILES.get("imagen")
 
@@ -832,7 +839,7 @@ def crear_producto(request):
             nombre=nombre,
             descripcion=descripcion,
             precio=precio,
-            precio_descuento=float(precio_descuento) if precio_descuento else None,
+            precio_descuento=precio_descuento,
             stock=stock,
             categoria=categoria,
             imagen=imagen
@@ -851,12 +858,18 @@ def editar_producto(request, prenda_id):
     categorias = Categoria.objects.all().order_by("nombre")
 
     if request.method == "POST":
-        producto.nombre = request.POST.get("nombre", "")
-        producto.descripcion = request.POST.get("descripcion", "")
-        producto.precio = float(request.POST.get("precio", 0))
-        precio_descuento = request.POST.get("precio_descuento")
-        producto.precio_descuento = float(precio_descuento) if precio_descuento else None
-        producto.stock = int(request.POST.get("stock", 0))
+        producto.nombre = request.POST.get("nombre", "").strip()
+        producto.descripcion = request.POST.get("descripcion", "").strip()
+        
+        precio_str = request.POST.get("precio", "0").strip()
+        producto.precio = float(precio_str) if precio_str else 0.0
+        
+        pd_str = request.POST.get("precio_descuento", "").strip()
+        producto.precio_descuento = float(pd_str) if pd_str else None
+        
+        stock_str = request.POST.get("stock", "0").strip()
+        producto.stock = int(stock_str) if stock_str else 0
+        
         categoria_id = request.POST.get("categoria")
 
         if categoria_id:
