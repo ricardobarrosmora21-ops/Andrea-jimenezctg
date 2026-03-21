@@ -176,7 +176,7 @@ def tienda(request):
     })
 
 def oferta(request):
-    productos_qs = Prenda.objects.filter(is_archived=False).order_by("-id")
+    productos_qs = Prenda.objects.filter(is_archived=False, precio_descuento__isnull=False).order_by("-id")
     paginator = Paginator(productos_qs, 9)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
