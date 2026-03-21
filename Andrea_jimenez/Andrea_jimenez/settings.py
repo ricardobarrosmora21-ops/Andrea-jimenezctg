@@ -114,6 +114,9 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+# Evitar errores si archivos referenciados en CSS (.map) no existen (ej. djangorestframework bootstrap)
+WHITENOISE_MANIFEST_STRICT = False
+
 # Backwards compatibility for django-cloudinary-storage
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
