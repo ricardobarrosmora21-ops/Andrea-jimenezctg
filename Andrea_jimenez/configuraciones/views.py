@@ -198,8 +198,8 @@ def atencion(request):
             email = EmailMessage(
                 f"Nuevo Mensaje de Contacto: {nombre}",
                 f"Nombre: {nombre}\nEmail: {email_cliente}\nTeléfono: {telefono}\n\nMensaje:\n{mensaje}",
-                settings.EMAIL_HOST_USER,
-                [settings.EMAIL_HOST_USER] # Se envía al admin
+                settings.DEFAULT_FROM_EMAIL,
+                [settings.DEFAULT_FROM_EMAIL] # Se envía al admin
             )
             email.send(fail_silently=False)
             logger.info(f"Mensaje de contacto enviado correctamente de {nombre} ({email_cliente})")
@@ -436,7 +436,7 @@ def confirmar_compra(request):
                 email = EmailMessage(
                     f"Factura de Compra #{venta.id} - Andrea Jiménez",
                     html_content,
-                    settings.EMAIL_HOST_USER,
+                    settings.DEFAULT_FROM_EMAIL,
                     [cliente.user.email]
                 )
                 email.content_subtype = "html"
@@ -556,7 +556,7 @@ def paypal_capture(request):
                     email = EmailMessage(
                         f"Factura de Compra #{venta.id} - Andrea Jiménez",
                         html_content,
-                        settings.EMAIL_HOST_USER,
+                        settings.DEFAULT_FROM_EMAIL,
                         [cliente.user.email]
                     )
                     email.content_subtype = "html"
