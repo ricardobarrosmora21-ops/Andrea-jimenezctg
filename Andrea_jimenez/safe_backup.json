@@ -1,0 +1,158 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$bMLcgzQOrmcW4fJC5lHO6I$QLf2MVVvAKuBmScJk8Scqw9qrafFZTZJDC/W3SBGjtM=",
+      "last_login": "2025-12-08T18:51:53.981Z",
+      "is_superuser": false,
+      "username": "ricardo",
+      "first_name": "Cliente",
+      "last_name": "",
+      "email": "cliente@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-12-04T12:01:12.725Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$FSHTCSvYcSLL7JPsBzS38L$rqNvbuCwAWEaVs9bpTsROx4bLYqQz6GvtiQ2i74N9BY=",
+      "last_login": "2026-03-21T02:16:40.457Z",
+      "is_superuser": true,
+      "username": "admin_master",
+      "first_name": "",
+      "last_name": "",
+      "email": "admin@system.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-12-04T13:47:44.070Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$7r7EKWVtTS6LKc5exwEuO6$czrr0h+bxRJ864y2rCy6c6bVkAcLm0t84jQ+yy3V3QQ=",
+      "last_login": "2026-03-13T18:04:47.394Z",
+      "is_superuser": false,
+      "username": "Ricardo Enrique Barros Mora",
+      "first_name": "Ricardo ",
+      "last_name": "",
+      "email": "ricardobarrosmora21@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-03-11T20:55:51.452Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "configuraciones.cliente",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "direccion": "######",
+      "telefono": "######"
+    }
+  },
+  {
+    "model": "configuraciones.cliente",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "direccion": "20 de julio",
+      "telefono": "3117803714"
+    }
+  },
+  {
+    "model": "configuraciones.categoria",
+    "pk": 1,
+    "fields": {
+      "nombre": "Vestidos"
+    }
+  },
+  {
+    "model": "configuraciones.categoria",
+    "pk": 2,
+    "fields": {
+      "nombre": "Bolsos"
+    }
+  },
+  {
+    "model": "configuraciones.categoria",
+    "pk": 3,
+    "fields": {
+      "nombre": "Accesorios"
+    }
+  },
+  {
+    "model": "configuraciones.prenda",
+    "pk": 1,
+    "fields": {
+      "nombre": "Enterizo negro",
+      "slug": "henterizo-negro",
+      "descripcion": "...........",
+      "precio": "65000.00",
+      "precio_descuento": "55000.00",
+      "stock": 9,
+      "inventario": null,
+      "categoria": 1,
+      "imagen": "productos/enterizo.avif",
+      "codigo_barras": "AJ-000001",
+      "barcode_image": "barcodes/barcode-AJ-000001_TA55Nvb.png",
+      "is_archived": false,
+      "archived_at": null,
+      "created_at": "2026-02-04T15:46:43.522Z",
+      "updated_at": "2026-03-13T14:16:03.220Z"
+    }
+  },
+  {
+    "model": "configuraciones.prenda",
+    "pk": 2,
+    "fields": {
+      "nombre": "Carteras & Bolsos",
+      "slug": "carteras-bolsos",
+      "descripcion": "para toda ocasi\u00f3n",
+      "precio": "80000.00",
+      "precio_descuento": null,
+      "stock": 16,
+      "inventario": null,
+      "categoria": 2,
+      "imagen": "productos/bolsos.avif",
+      "codigo_barras": "AJ-000002",
+      "barcode_image": "barcodes/barcode-AJ-000002_UEpqqCV.png",
+      "is_archived": false,
+      "archived_at": null,
+      "created_at": "2026-02-04T15:56:33.976Z",
+      "updated_at": "2026-03-21T01:55:59.635Z"
+    }
+  },
+  {
+    "model": "configuraciones.prenda",
+    "pk": 3,
+    "fields": {
+      "nombre": "Accesorios",
+      "slug": "accesorios",
+      "descripcion": "Collares, Aretes y Manillas",
+      "precio": "20000.00",
+      "precio_descuento": null,
+      "stock": 0,
+      "inventario": null,
+      "categoria": 3,
+      "imagen": "productos/Accesorios.avif",
+      "codigo_barras": "AJ-000003",
+      "barcode_image": "barcodes/barcode-AJ-000003_04ORAiO.png",
+      "is_archived": true,
+      "archived_at": "2026-03-13T14:07:09.892Z",
+      "created_at": "2026-02-04T15:59:04.587Z",
+      "updated_at": "2026-03-13T14:07:09.892Z"
+    }
+  }
+]

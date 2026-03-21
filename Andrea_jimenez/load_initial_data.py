@@ -9,9 +9,9 @@ from django.contrib.auth.models import User
 
 # Si no hay usuarios en produccion, asumimos que la DB esta recien creada
 if User.objects.count() == 0:
-    print(">>> Base de datos vacia detectada. Cargando el archivo backup_render.json...")
+    print(">>> Base de datos vacia detectada. Cargando el archivo safe_backup.json...")
     try:
-        call_command("loaddata", "backup_render.json")
+        call_command("loaddata", "safe_backup.json")
         print(">>> Backup cargado exitosamente.")
     except Exception as e:
         print(f">>> Error cargando el backup: {e}")
