@@ -31,7 +31,7 @@ def es_admin(user):
     return user.username == "admin_master"
 
 def es_cliente(user):
-    return user.groups.filter(name="Cliente").exists()
+    return user.groups.filter(name="Cliente").exists() or es_admin(user) or user.is_superuser
 
 
 # =====================================================

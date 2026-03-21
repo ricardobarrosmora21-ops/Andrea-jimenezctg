@@ -94,7 +94,9 @@
                     {% endif %}
                     {% if producto.codigo_barras %}
                     <div class="product-barcode-client">
+                        {% if producto.barcode_image %}
                         <img src="{{ producto.barcode_image.url }}" alt="Código de barras" class="barcode-img-small">
+                        {% endif %}
                         <span class="barcode-text">{{ producto.codigo_barras }}</span>
                     </div>
                     {% endif %}
