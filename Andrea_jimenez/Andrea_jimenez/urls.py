@@ -99,8 +99,12 @@ urlpatterns = [
     path('pedido/actualizar_envio/<int:pedido_id>/', views.actualizar_envio_pedido, name='actualizar_envio_pedido'),
 ]
 
+from django.urls import re_path
+from django.views.static import serve
+
 # ----------------------------
 # ARCHIVOS MEDIA
 # ----------------------------
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += [
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+]
