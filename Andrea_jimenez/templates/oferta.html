@@ -101,7 +101,12 @@
                     </div>
                     {% endif %}
                     <div class="card-precio">
-                        <span class="precio-oferta">COP ${{ producto.precio }}</span>
+                        {% if producto.precio_descuento %}
+                            <span class="precio-original" style="text-decoration: line-through; color: #999; font-size: 0.9em; margin-right: 8px;">COP ${{ producto.precio }}</span>
+                            <span class="precio-oferta" style="color: #ff7a9c; font-weight: bold;">COP ${{ producto.precio_descuento }}</span>
+                        {% else %}
+                            <span class="precio-oferta">COP ${{ producto.precio }}</span>
+                        {% endif %}
                     </div>
                     {% if user.is_authenticated and es_cliente %}
                         <a href="{% url 'agregar_al_carrito' producto.id %}" class="card-boton"><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</a>
