@@ -170,7 +170,7 @@
                     .then(response => response.json())
                     .then(orderDataServer => {
                         if (orderDataServer.status === "success") {
-                            window.location.href = "{% url 'factura_imprimir' 0 %}".replace('0', orderDataServer.venta_id);
+                            window.location.href = "{% url 'factura_imprimir' 0 %}".replace('0', orderDataServer.venta_id) + "?success=1";
                         } else {
                             alert("Error al procesar el pago: " + orderDataServer.message);
                         }

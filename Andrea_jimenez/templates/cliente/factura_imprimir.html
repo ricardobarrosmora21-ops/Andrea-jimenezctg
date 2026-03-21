@@ -223,6 +223,13 @@
 </head>
 
 <body>
+    {% if request.GET.success == '1' %}
+    <div style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 20px; border-radius: 8px; margin-bottom: 30px; text-align: center; font-size: 16px;">
+        <strong>¡Compra Exitosa! 🎉</strong><br>
+        Tu pago ha sido procesado correctamente. Hemos enviado una copia de esta factura y los detalles de tu pedido al correo: <strong>{{ venta.cliente.user.email }}</strong>.
+    </div>
+    {% endif %}
+
     <div class="header-elite">
         <div class="brand-info">
             <h1>ANDREA JIMÉNEZ</h1>
