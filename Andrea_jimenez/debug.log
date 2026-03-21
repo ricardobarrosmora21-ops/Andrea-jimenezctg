@@ -1,0 +1,525 @@
+INFO 2026-03-13 09:09:22,095 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:09:30,032 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\Andrea_jimenez\settings.py changed, reloading.
+INFO 2026-03-13 09:09:31,806 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:09:48,657 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\configuraciones\views.py changed, reloading.
+INFO 2026-03-13 09:09:50,528 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:11:26,034 basehttp "GET /gestion_productos/ HTTP/1.1" 200 32106
+INFO 2026-03-13 09:11:39,149 basehttp "GET /carrito/ HTTP/1.1" 200 689
+INFO 2026-03-13 09:11:39,185 basehttp "GET /static/css/carrito.css HTTP/1.1" 304 0
+INFO 2026-03-13 09:11:41,073 basehttp "GET / HTTP/1.1" 200 8549
+INFO 2026-03-13 09:11:42,223 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 09:11:47,232 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 09:11:51,109 basehttp "GET /agregar/1/ HTTP/1.1" 302 0
+INFO 2026-03-13 09:11:51,220 basehttp "GET /carrito/ HTTP/1.1" 200 2562
+INFO 2026-03-13 09:11:57,317 basehttp "POST /actualizar/10/ HTTP/1.1" 302 0
+INFO 2026-03-13 09:11:57,402 basehttp "GET /carrito/ HTTP/1.1" 200 2564
+INFO 2026-03-13 09:11:59,065 basehttp "GET /checkout/ HTTP/1.1" 200 4231
+INFO 2026-03-13 09:12:17,506 views --- INICIO PROCESO CORREO VENTA #7 ---
+INFO 2026-03-13 09:12:17,508 views Cliente: Ricardo Enrique Barros Mora, Email: ricardobarrosmora21@gmail.com
+ERROR 2026-03-13 09:12:17,618 views EXCEPCIÓN CRÍTICA en envío de correo: cannot access local variable 'ImageReader' where it is not associated with a value
+ERROR 2026-03-13 09:12:17,622 views Traceback (most recent call last):
+  File "C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\configuraciones\views.py", line 414, in confirmar_compra
+    pdf_buffer = generate_invoice_pdf(venta)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\configuraciones\utils.py", line 130, in generate_invoice_pdf
+    img_data_invoice = ImageReader(rv)
+                       ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'ImageReader' where it is not associated with a value
+
+INFO 2026-03-13 09:12:17,622 views --- FIN PROCESO CORREO VENTA #7 ---
+INFO 2026-03-13 09:12:17,623 basehttp "POST /confirmar/ HTTP/1.1" 302 0
+INFO 2026-03-13 09:12:17,702 basehttp "GET /factura/7/ HTTP/1.1" 200 8207
+INFO 2026-03-13 09:12:26,601 basehttp "GET /mis_ventas/ HTTP/1.1" 200 5697
+INFO 2026-03-13 09:12:32,071 basehttp "GET /perfil/ HTTP/1.1" 200 1537
+INFO 2026-03-13 09:13:28,882 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\configuraciones\utils.py changed, reloading.
+INFO 2026-03-13 09:13:30,886 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:13:42,237 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\configuraciones\utils.py changed, reloading.
+INFO 2026-03-13 09:13:43,814 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:15:33,390 basehttp "GET / HTTP/1.1" 200 8037
+INFO 2026-03-13 09:15:33,560 basehttp "GET /media/productos/enterizo.avif HTTP/1.1" 200 5071
+INFO 2026-03-13 09:15:35,307 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+WARNING 2026-03-13 09:15:35,622 log Not Found: /@vite/client
+WARNING 2026-03-13 09:15:35,627 basehttp "GET /@vite/client HTTP/1.1" 404 10785
+INFO 2026-03-13 09:15:37,147 basehttp - Broken pipe from ('127.0.0.1', 50425)
+INFO 2026-03-13 09:15:44,801 basehttp "GET /perfil/ HTTP/1.1" 200 1537
+INFO 2026-03-13 09:15:46,240 basehttp "GET / HTTP/1.1" 200 8549
+INFO 2026-03-13 09:15:47,202 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 09:15:52,166 basehttp "GET /agregar/1/ HTTP/1.1" 302 0
+INFO 2026-03-13 09:15:52,367 basehttp "GET /carrito/ HTTP/1.1" 200 2562
+INFO 2026-03-13 09:15:52,388 basehttp - Broken pipe from ('127.0.0.1', 55567)
+INFO 2026-03-13 09:15:52,405 basehttp "GET /static/css/carrito.css HTTP/1.1" 304 0
+INFO 2026-03-13 09:15:54,180 basehttp "GET /checkout/ HTTP/1.1" 200 4228
+INFO 2026-03-13 09:16:03,230 views --- INICIO PROCESO CORREO VENTA #8 ---
+INFO 2026-03-13 09:16:03,230 views Cliente: Ricardo Enrique Barros Mora, Email: ricardobarrosmora21@gmail.com
+ERROR 2026-03-13 09:16:03,342 views EXCEPCIÓN CRÍTICA en envío de correo: expected str, bytes or os.PathLike object, not ImageReader
+ERROR 2026-03-13 09:16:03,348 views Traceback (most recent call last):
+  File "C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\configuraciones\views.py", line 414, in confirmar_compra
+    pdf_buffer = generate_invoice_pdf(venta)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\configuraciones\utils.py", line 131, in generate_invoice_pdf
+    invoice_barcode_img = Image(img_data_invoice, width=35*mm, height=12*mm)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\FAMILIABARROS\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\reportlab\platypus\flowables.py", line 419, in __init__
+    if not fp and os.path.splitext(filename)[1] in ['.jpg', '.JPG', '.jpeg', '.JPEG']:
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen ntpath>", line 232, in splitext
+TypeError: expected str, bytes or os.PathLike object, not ImageReader
+
+INFO 2026-03-13 09:16:03,348 views --- FIN PROCESO CORREO VENTA #8 ---
+INFO 2026-03-13 09:16:03,350 basehttp "POST /confirmar/ HTTP/1.1" 302 0
+INFO 2026-03-13 09:16:03,422 basehttp "GET /factura/8/ HTTP/1.1" 200 8193
+INFO 2026-03-13 09:16:12,463 basehttp "GET /mis_ventas/ HTTP/1.1" 200 6356
+INFO 2026-03-13 09:17:08,822 basehttp "GET /gestion_clientes/ HTTP/1.1" 200 20305
+INFO 2026-03-13 09:17:11,249 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 65378
+INFO 2026-03-13 09:17:39,351 basehttp "POST /pedido/actualizar_estado/8/ HTTP/1.1" 302 0
+INFO 2026-03-13 09:17:39,489 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 65800
+INFO 2026-03-13 09:17:45,102 basehttp "GET /factura/8/ HTTP/1.1" 200 8193
+INFO 2026-03-13 09:18:13,140 basehttp "GET /mis_ventas/ HTTP/1.1" 200 6358
+INFO 2026-03-13 09:18:52,707 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\configuraciones\utils.py changed, reloading.
+INFO 2026-03-13 09:18:55,091 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:18:59,119 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\configuraciones\utils.py changed, reloading.
+INFO 2026-03-13 09:19:00,996 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:20:38,673 basehttp "GET /mis_ventas/ HTTP/1.1" 200 6358
+INFO 2026-03-13 09:20:38,697 basehttp "GET /static/css/carrito.css HTTP/1.1" 304 0
+INFO 2026-03-13 09:20:39,518 basehttp "GET /mis_ventas/ HTTP/1.1" 200 6358
+INFO 2026-03-13 09:20:39,878 basehttp "GET /mis_ventas/ HTTP/1.1" 200 6358
+INFO 2026-03-13 09:20:40,874 basehttp "GET / HTTP/1.1" 200 8549
+INFO 2026-03-13 09:20:41,867 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 09:20:47,090 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 09:21:02,362 basehttp - Broken pipe from ('127.0.0.1', 60960)
+INFO 2026-03-13 09:21:03,651 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 09:21:03,885 basehttp "GET /agregar/2/ HTTP/1.1" 302 0
+INFO 2026-03-13 09:21:03,994 basehttp "GET /carrito/ HTTP/1.1" 200 2574
+INFO 2026-03-13 09:21:05,349 basehttp "GET /checkout/ HTTP/1.1" 200 4235
+INFO 2026-03-13 09:21:14,851 views --- INICIO PROCESO CORREO VENTA #9 ---
+INFO 2026-03-13 09:21:14,851 views Cliente: Ricardo Enrique Barros Mora, Email: ricardobarrosmora21@gmail.com
+INFO 2026-03-13 09:21:15,041 views PDF generado. Tamaño: 54652 bytes
+INFO 2026-03-13 09:21:15,047 views Plantilla HTML renderizada correctamente
+INFO 2026-03-13 09:21:15,048 views PDF adjuntado al objeto EmailMessage
+INFO 2026-03-13 09:21:15,049 views Llamando a email.send()...
+INFO 2026-03-13 09:21:17,579 views Resultado email.send(): 1
+INFO 2026-03-13 09:21:17,580 views ¡ÉXITO CONFIRMADO! Correo enviado a ricardobarrosmora21@gmail.com
+INFO 2026-03-13 09:21:17,582 views --- FIN PROCESO CORREO VENTA #9 ---
+INFO 2026-03-13 09:21:17,583 basehttp "POST /confirmar/ HTTP/1.1" 302 0
+INFO 2026-03-13 09:21:17,655 basehttp "GET /factura/9/ HTTP/1.1" 200 8208
+INFO 2026-03-13 09:33:10,781 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\Andrea_jimenez\settings.py changed, reloading.
+INFO 2026-03-13 09:33:13,319 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:33:21,959 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\Andrea_jimenez\urls.py changed, reloading.
+INFO 2026-03-13 09:33:23,980 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:33:34,129 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\configuraciones\views.py changed, reloading.
+INFO 2026-03-13 09:33:35,681 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:33:45,551 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\configuraciones\views.py changed, reloading.
+INFO 2026-03-13 09:33:47,273 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:34:18,295 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\configuraciones\views.py changed, reloading.
+INFO 2026-03-13 09:34:19,827 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:36:13,918 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 71055
+INFO 2026-03-13 09:42:32,497 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 70796
+INFO 2026-03-13 09:44:35,873 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 70832
+INFO 2026-03-13 09:44:51,586 basehttp "GET /gestion_clientes/ HTTP/1.1" 200 20308
+INFO 2026-03-13 09:45:29,844 basehttp "GET /gestion_clientes/ HTTP/1.1" 200 20308
+INFO 2026-03-13 09:46:29,133 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:46:36,842 basehttp "GET / HTTP/1.1" 200 8037
+INFO 2026-03-13 09:46:37,341 basehttp "GET /static/img/logo.png HTTP/1.1" 200 14988
+INFO 2026-03-13 09:46:37,348 basehttp "GET /static/img/bolsos.jpeg HTTP/1.1" 200 60273
+INFO 2026-03-13 09:46:37,367 basehttp "GET /media/productos/bolsos.avif HTTP/1.1" 200 131978
+INFO 2026-03-13 09:46:37,394 basehttp "GET /static/css/home.css HTTP/1.1" 200 22967
+INFO 2026-03-13 09:46:37,410 basehttp "GET /media/productos/enterizo.avif HTTP/1.1" 200 5071
+INFO 2026-03-13 09:46:37,422 basehttp "GET /static/img/accesorios.jpeg HTTP/1.1" 200 29151
+INFO 2026-03-13 09:46:37,424 basehttp "GET /static/img/vestido.jpeg HTTP/1.1" 200 38696
+INFO 2026-03-13 09:46:38,647 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 09:46:44,031 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 09:46:44,372 basehttp "GET /panel_cliente/ HTTP/1.1" 302 0
+INFO 2026-03-13 09:46:44,385 basehttp "GET /login/?next=/panel_cliente/ HTTP/1.1" 200 1994
+INFO 2026-03-13 09:46:54,113 basehttp "POST /login/?next=/panel_cliente/ HTTP/1.1" 302 0
+INFO 2026-03-13 09:46:54,223 basehttp "GET /panel_admin/ HTTP/1.1" 200 22923
+INFO 2026-03-13 09:47:17,605 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 70832
+INFO 2026-03-13 09:48:11,485 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\configuraciones\views.py changed, reloading.
+INFO 2026-03-13 09:48:11,750 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\configuraciones\views.py changed, reloading.
+INFO 2026-03-13 09:48:12,826 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:48:14,298 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:49:01,080 basehttp "GET /panel_admin/ HTTP/1.1" 200 22905
+INFO 2026-03-13 09:49:14,005 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 70832
+INFO 2026-03-13 09:49:20,167 basehttp "GET /escanear-venta/ HTTP/1.1" 200 35334
+INFO 2026-03-13 09:49:47,283 basehttp "GET / HTTP/1.1" 200 8037
+INFO 2026-03-13 09:49:47,384 basehttp "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-03-13 09:49:47,613 basehttp - Broken pipe from ('127.0.0.1', 55279)
+INFO 2026-03-13 09:49:47,629 basehttp - Broken pipe from ('127.0.0.1', 51458)
+INFO 2026-03-13 09:49:48,745 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 09:49:53,991 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 09:50:48,490 basehttp "GET /gestion_productos/ HTTP/1.1" 200 32105
+INFO 2026-03-13 09:50:48,525 basehttp "GET /media/barcodes/barcode-AJ-000003_04ORAiO.png HTTP/1.1" 200 4228
+INFO 2026-03-13 09:50:48,525 basehttp "GET /media/productos/Accesorios.avif HTTP/1.1" 200 43202
+INFO 2026-03-13 09:50:48,529 basehttp "GET /media/barcodes/barcode-AJ-000002_UEpqqCV.png HTTP/1.1" 200 4044
+INFO 2026-03-13 09:50:48,536 basehttp "GET /media/barcodes/barcode-AJ-000001_TA55Nvb.png HTTP/1.1" 200 3537
+INFO 2026-03-13 09:50:59,181 basehttp "GET /gestion_categorias/ HTTP/1.1" 200 18886
+INFO 2026-03-13 09:51:00,171 basehttp "GET /panel_admin/ HTTP/1.1" 200 22905
+INFO 2026-03-13 09:51:02,382 basehttp "GET /gestion_categorias/ HTTP/1.1" 200 18886
+INFO 2026-03-13 09:51:04,207 basehttp "GET /gestion_productos/ HTTP/1.1" 200 32105
+INFO 2026-03-13 09:51:06,613 basehttp "GET /gestion_clientes/ HTTP/1.1" 200 20308
+INFO 2026-03-13 09:51:08,703 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 70832
+INFO 2026-03-13 09:51:16,239 basehttp "GET /escanear-venta/ HTTP/1.1" 200 35334
+INFO 2026-03-13 09:51:18,361 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 70832
+INFO 2026-03-13 09:51:18,967 basehttp "GET /gestion_clientes/ HTTP/1.1" 200 20308
+INFO 2026-03-13 09:51:20,290 basehttp "GET /gestion_productos/ HTTP/1.1" 200 32105
+INFO 2026-03-13 09:51:34,166 basehttp "GET /gestion_clientes/ HTTP/1.1" 200 20308
+INFO 2026-03-13 09:51:35,133 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 70832
+INFO 2026-03-13 09:51:38,202 basehttp "GET /panel_admin/ HTTP/1.1" 200 22905
+INFO 2026-03-13 09:52:17,124 basehttp "GET /gestion_productos/ HTTP/1.1" 200 32105
+INFO 2026-03-13 09:52:20,420 basehttp "GET /gestion_categorias/ HTTP/1.1" 200 18886
+INFO 2026-03-13 09:52:21,834 basehttp "GET /gestion_clientes/ HTTP/1.1" 200 20308
+INFO 2026-03-13 09:52:30,185 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 70832
+INFO 2026-03-13 09:52:37,336 basehttp "GET /gestion_clientes/ HTTP/1.1" 200 20308
+INFO 2026-03-13 09:54:25,872 basehttp "GET / HTTP/1.1" 200 8037
+INFO 2026-03-13 09:54:25,913 basehttp "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-03-13 09:54:27,178 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 09:54:31,226 basehttp "GET /tienda/ HTTP/1.1" 200 8897
+INFO 2026-03-13 09:54:31,260 basehttp "GET /static/css/oferta.css HTTP/1.1" 200 748
+INFO 2026-03-13 09:54:31,260 basehttp "GET /static/css/tienda.css HTTP/1.1" 200 22605
+INFO 2026-03-13 09:54:31,292 basehttp - Broken pipe from ('127.0.0.1', 57589)
+INFO 2026-03-13 09:54:53,429 basehttp "GET /gestion_clientes/ HTTP/1.1" 200 20308
+INFO 2026-03-13 09:54:54,785 basehttp "GET /gestion_clientes/ HTTP/1.1" 200 20308
+INFO 2026-03-13 09:55:08,843 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 09:55:11,549 basehttp "GET / HTTP/1.1" 200 8037
+INFO 2026-03-13 09:55:11,755 basehttp - Broken pipe from ('127.0.0.1', 58495)
+INFO 2026-03-13 09:55:13,048 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 09:55:16,694 basehttp "GET /panel_cliente/ HTTP/1.1" 302 0
+INFO 2026-03-13 09:55:16,704 basehttp "GET /login/?next=/panel_cliente/ HTTP/1.1" 200 1994
+INFO 2026-03-13 09:55:16,742 basehttp - Broken pipe from ('127.0.0.1', 60811)
+INFO 2026-03-13 09:55:21,879 basehttp "POST /login/?next=/panel_cliente/ HTTP/1.1" 302 0
+INFO 2026-03-13 09:55:22,043 basehttp "GET /panel_admin/ HTTP/1.1" 200 22905
+INFO 2026-03-13 09:55:25,132 basehttp "GET /gestion_productos/ HTTP/1.1" 200 32105
+INFO 2026-03-13 09:55:35,976 basehttp "GET /gestion_categorias/ HTTP/1.1" 200 18886
+INFO 2026-03-13 09:55:37,809 basehttp "GET /gestion_clientes/ HTTP/1.1" 200 20308
+INFO 2026-03-13 09:56:12,130 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 70832
+INFO 2026-03-13 09:59:57,667 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 70832
+INFO 2026-03-13 09:59:59,175 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 70832
+WARNING 2026-03-13 10:00:19,776 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-03-13 10:00:19,776 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11074
+INFO 2026-03-13 10:03:50,182 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 10:04:04,763 basehttp "GET / HTTP/1.1" 200 8037
+INFO 2026-03-13 10:04:04,808 basehttp "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-03-13 10:04:06,041 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 10:04:09,800 basehttp "GET /panel_cliente/ HTTP/1.1" 302 0
+INFO 2026-03-13 10:04:09,810 basehttp "GET /login/?next=/panel_cliente/ HTTP/1.1" 200 1994
+INFO 2026-03-13 10:04:09,865 basehttp - Broken pipe from ('127.0.0.1', 49764)
+INFO 2026-03-13 10:04:17,045 basehttp "POST /login/?next=/panel_cliente/ HTTP/1.1" 302 0
+INFO 2026-03-13 10:04:17,145 basehttp "GET /panel_admin/ HTTP/1.1" 200 23451
+WARNING 2026-03-13 10:04:17,388 log Not Found: /favicon.ico
+WARNING 2026-03-13 10:04:17,388 basehttp "GET /favicon.ico HTTP/1.1" 404 10963
+INFO 2026-03-13 10:04:19,928 basehttp "GET /gestion_productos/ HTTP/1.1" 200 32651
+INFO 2026-03-13 10:04:24,706 basehttp "GET /gestion_categorias/ HTTP/1.1" 200 19432
+INFO 2026-03-13 10:04:26,558 basehttp "GET /gestion_clientes/ HTTP/1.1" 200 20854
+INFO 2026-03-13 10:04:28,958 basehttp "GET /gestion_ventas/ HTTP/1.1" 200 71378
+INFO 2026-03-13 10:04:44,076 basehttp "GET /mis_ventas/ HTTP/1.1" 200 7017
+INFO 2026-03-13 10:04:44,161 basehttp "GET /static/css/carrito.css HTTP/1.1" 304 0
+INFO 2026-03-13 10:04:46,671 basehttp "GET / HTTP/1.1" 200 8549
+INFO 2026-03-13 10:04:46,708 basehttp "GET /static/css/home.css HTTP/1.1" 200 22967
+INFO 2026-03-13 10:04:47,949 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 10:04:50,583 basehttp "GET / HTTP/1.1" 200 8549
+INFO 2026-03-13 10:04:50,596 basehttp - Broken pipe from ('127.0.0.1', 51879)
+INFO 2026-03-13 10:04:51,597 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 10:04:56,801 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 10:07:45,639 basehttp "GET / HTTP/1.1" 200 8037
+INFO 2026-03-13 10:07:45,949 basehttp - Broken pipe from ('127.0.0.1', 51478)
+INFO 2026-03-13 10:07:47,287 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+WARNING 2026-03-13 10:07:47,593 log Not Found: /@vite/client
+WARNING 2026-03-13 10:07:47,595 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 10:12:09,687 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\Andrea_jimenez\settings.py changed, reloading.
+INFO 2026-03-13 10:12:09,894 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\Andrea_jimenez\settings.py changed, reloading.
+INFO 2026-03-13 10:12:11,752 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 10:12:12,976 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 10:13:12,989 basehttp "GET / HTTP/1.1" 200 8549
+INFO 2026-03-13 10:13:13,121 basehttp "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-03-13 10:13:14,747 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 10:13:17,655 basehttp "GET /tienda/ HTTP/1.1" 200 9242
+INFO 2026-03-13 10:13:17,692 basehttp - Broken pipe from ('127.0.0.1', 56173)
+INFO 2026-03-13 10:13:17,721 basehttp "GET /media/barcodes/barcode-AJ-000002_UEpqqCV.png HTTP/1.1" 304 0
+INFO 2026-03-13 10:13:17,722 basehttp "GET /static/css/tienda.css HTTP/1.1" 304 0
+INFO 2026-03-13 10:13:17,724 basehttp "GET /media/barcodes/barcode-AJ-000001_TA55Nvb.png HTTP/1.1" 304 0
+INFO 2026-03-13 10:13:21,194 basehttp "GET /agregar/2/ HTTP/1.1" 302 0
+INFO 2026-03-13 10:13:21,286 basehttp "GET /carrito/ HTTP/1.1" 200 2574
+INFO 2026-03-13 10:13:23,954 basehttp "GET /checkout/ HTTP/1.1" 200 7562
+INFO 2026-03-13 10:13:23,987 basehttp "GET /static/css/carrito.css HTTP/1.1" 304 0
+INFO 2026-03-13 10:14:28,600 basehttp "GET /carrito/ HTTP/1.1" 200 2574
+INFO 2026-03-13 10:17:26,894 basehttp "GET /carrito/ HTTP/1.1" 200 2582
+INFO 2026-03-13 10:17:30,761 basehttp "GET /checkout/ HTTP/1.1" 200 7595
+INFO 2026-03-13 10:20:20,999 basehttp "GET /checkout/ HTTP/1.1" 200 7595
+INFO 2026-03-13 10:20:36,577 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 10:20:41,579 basehttp "GET / HTTP/1.1" 200 8024
+INFO 2026-03-13 10:20:42,049 basehttp "GET /media/productos/bolsos.avif HTTP/1.1" 200 131978
+INFO 2026-03-13 10:20:42,058 basehttp "GET /static/img/bolsos.jpeg HTTP/1.1" 200 60273
+INFO 2026-03-13 10:20:42,067 basehttp "GET /static/img/logo.png HTTP/1.1" 200 14988
+INFO 2026-03-13 10:20:42,095 basehttp "GET /static/img/vestido.jpeg HTTP/1.1" 200 38696
+INFO 2026-03-13 10:20:42,102 basehttp "GET /static/img/accesorios.jpeg HTTP/1.1" 200 29151
+INFO 2026-03-13 10:20:42,113 basehttp "GET /media/productos/enterizo.avif HTTP/1.1" 200 5071
+INFO 2026-03-13 10:20:42,119 basehttp "GET /static/css/home.css HTTP/1.1" 200 22967
+INFO 2026-03-13 10:20:43,377 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 10:20:45,454 basehttp "GET /static/img/favicon-round.png HTTP/1.1" 200 436719
+INFO 2026-03-13 10:20:48,616 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 10:20:50,201 basehttp "GET /login/ HTTP/1.1" 200 1994
+INFO 2026-03-13 10:20:50,243 basehttp "GET /static/css/login.css HTTP/1.1" 200 7936
+INFO 2026-03-13 10:20:50,247 basehttp "GET /static/img/logo.jpg HTTP/1.1" 200 27130
+INFO 2026-03-13 10:21:37,708 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-03-13 10:21:37,781 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 10:21:37,803 basehttp "GET /static/css/panel_cliente.css HTTP/1.1" 200 3458
+INFO 2026-03-13 10:21:40,991 basehttp "GET / HTTP/1.1" 200 8549
+INFO 2026-03-13 10:21:41,961 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 10:21:46,631 basehttp "GET /agregar/2/ HTTP/1.1" 302 0
+INFO 2026-03-13 10:21:46,728 basehttp "GET /carrito/ HTTP/1.1" 200 2584
+INFO 2026-03-13 10:21:46,750 basehttp "GET /static/css/carrito.css HTTP/1.1" 200 10190
+INFO 2026-03-13 10:21:46,755 basehttp - Broken pipe from ('127.0.0.1', 58375)
+INFO 2026-03-13 10:21:50,118 basehttp "GET /checkout/ HTTP/1.1" 200 7599
+INFO 2026-03-13 10:22:21,011 basehttp "GET /carrito/ HTTP/1.1" 200 2584
+INFO 2026-03-13 10:22:22,957 basehttp "GET /checkout/ HTTP/1.1" 200 7599
+INFO 2026-03-13 10:39:57,168 basehttp "GET /checkout/ HTTP/1.1" 200 7565
+INFO 2026-03-13 10:39:57,274 basehttp "GET /static/css/carrito.css HTTP/1.1" 304 0
+INFO 2026-03-13 10:46:04,696 basehttp "GET /checkout/ HTTP/1.1" 200 7565
+INFO 2026-03-13 10:46:25,783 basehttp "GET /checkout/ HTTP/1.1" 200 7565
+INFO 2026-03-13 10:46:51,827 basehttp "GET /carrito/ HTTP/1.1" 200 2584
+INFO 2026-03-13 10:46:53,347 basehttp "GET /checkout/ HTTP/1.1" 200 7565
+INFO 2026-03-13 10:47:11,192 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 10:49:45,500 basehttp "GET / HTTP/1.1" 200 8549
+INFO 2026-03-13 10:49:45,560 basehttp "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-03-13 10:49:46,813 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 10:49:51,376 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 10:49:51,422 basehttp - Broken pipe from ('127.0.0.1', 50894)
+INFO 2026-03-13 10:50:14,778 basehttp "GET / HTTP/1.1" 200 8549
+INFO 2026-03-13 10:50:15,753 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 10:50:20,904 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 10:50:27,199 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 10:50:29,077 basehttp "GET / HTTP/1.1" 200 8549
+INFO 2026-03-13 10:50:29,942 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 10:50:35,097 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 10:50:50,526 basehttp - Broken pipe from ('127.0.0.1', 57003)
+INFO 2026-03-13 10:50:51,486 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 10:51:07,811 basehttp "GET /tienda/ HTTP/1.1" 200 9242
+INFO 2026-03-13 10:51:07,848 basehttp "GET /media/barcodes/barcode-AJ-000002_UEpqqCV.png HTTP/1.1" 200 4044
+INFO 2026-03-13 10:51:07,849 basehttp "GET /media/barcodes/barcode-AJ-000001_TA55Nvb.png HTTP/1.1" 200 3537
+INFO 2026-03-13 10:51:07,865 basehttp "GET /static/css/oferta.css HTTP/1.1" 200 748
+INFO 2026-03-13 10:51:07,867 basehttp "GET /static/css/tienda.css HTTP/1.1" 200 22605
+INFO 2026-03-13 10:51:37,892 basehttp "GET /agregar/2/ HTTP/1.1" 302 0
+INFO 2026-03-13 10:51:38,080 basehttp "GET /carrito/ HTTP/1.1" 200 2584
+INFO 2026-03-13 10:51:41,777 basehttp "GET /checkout/ HTTP/1.1" 200 7565
+INFO 2026-03-13 12:39:26,292 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\Andrea_jimenez\settings.py changed, reloading.
+INFO 2026-03-13 12:39:27,630 autoreload C:\Users\FAMILIABARROS\Desktop\Andrea_jimenez\Andrea_jimenez\settings.py changed, reloading.
+INFO 2026-03-13 12:39:36,853 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 12:39:44,887 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 12:40:24,052 basehttp "GET / HTTP/1.1" 200 8549
+INFO 2026-03-13 12:40:24,291 basehttp "GET /static/css/home.css HTTP/1.1" 200 22967
+INFO 2026-03-13 12:40:24,608 basehttp - Broken pipe from ('127.0.0.1', 50354)
+INFO 2026-03-13 12:40:25,797 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 12:40:31,008 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 12:40:33,170 basehttp "GET /agregar/2/ HTTP/1.1" 302 0
+INFO 2026-03-13 12:40:33,337 basehttp "GET /carrito/ HTTP/1.1" 200 2584
+INFO 2026-03-13 12:40:33,377 basehttp "GET /static/css/carrito.css HTTP/1.1" 304 0
+INFO 2026-03-13 12:40:35,729 basehttp "GET /checkout/ HTTP/1.1" 200 7621
+INFO 2026-03-13 12:40:45,309 basehttp "GET /checkout/ HTTP/1.1" 200 7621
+INFO 2026-03-13 12:40:46,656 basehttp "GET /checkout/ HTTP/1.1" 200 7621
+INFO 2026-03-13 12:42:24,467 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 12:42:45,386 basehttp "GET / HTTP/1.1" 200 8037
+INFO 2026-03-13 12:42:45,619 basehttp "GET / HTTP/1.1" 200 8037
+INFO 2026-03-13 12:42:45,805 basehttp "GET /static/css/home.css HTTP/1.1" 200 22967
+INFO 2026-03-13 12:42:45,988 basehttp - Broken pipe from ('127.0.0.1', 61450)
+INFO 2026-03-13 12:42:48,264 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+WARNING 2026-03-13 12:42:48,664 log Not Found: /@vite/client
+WARNING 2026-03-13 12:42:48,666 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 12:42:53,334 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 12:43:09,029 basehttp - Broken pipe from ('127.0.0.1', 51821)
+INFO 2026-03-13 12:43:09,381 basehttp - Broken pipe from ('127.0.0.1', 65003)
+INFO 2026-03-13 12:43:39,144 basehttp "GET / HTTP/1.1" 200 8037
+INFO 2026-03-13 12:43:39,188 basehttp "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-03-13 12:43:40,597 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+WARNING 2026-03-13 12:43:40,755 log Not Found: /@vite/client
+WARNING 2026-03-13 12:43:40,755 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 12:43:42,617 basehttp - Broken pipe from ('127.0.0.1', 62478)
+INFO 2026-03-13 12:43:46,767 basehttp "GET / HTTP/1.1" 200 8037
+INFO 2026-03-13 12:43:48,395 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+WARNING 2026-03-13 12:43:48,669 log Not Found: /@vite/client
+WARNING 2026-03-13 12:43:48,670 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 12:43:53,888 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 12:43:58,095 basehttp "GET /panel_cliente/ HTTP/1.1" 302 0
+INFO 2026-03-13 12:43:58,106 basehttp "GET /login/?next=/panel_cliente/ HTTP/1.1" 200 1994
+INFO 2026-03-13 12:43:58,160 basehttp "GET /static/css/login.css HTTP/1.1" 304 0
+WARNING 2026-03-13 12:43:58,240 log Not Found: /@vite/client
+WARNING 2026-03-13 12:43:58,249 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 12:44:14,201 basehttp "POST /login/?next=/panel_cliente/ HTTP/1.1" 302 0
+INFO 2026-03-13 12:44:14,269 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 12:44:14,295 basehttp "GET /static/css/panel_cliente.css HTTP/1.1" 200 3458
+WARNING 2026-03-13 12:44:14,461 log Not Found: /@vite/client
+WARNING 2026-03-13 12:44:14,463 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 12:44:26,035 basehttp "GET / HTTP/1.1" 200 8549
+INFO 2026-03-13 12:44:26,048 basehttp "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-03-13 12:44:27,548 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+WARNING 2026-03-13 12:44:27,787 log Not Found: /@vite/client
+WARNING 2026-03-13 12:44:27,788 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 12:44:32,447 basehttp "GET /agregar/2/ HTTP/1.1" 302 0
+INFO 2026-03-13 12:44:32,598 basehttp "GET /carrito/ HTTP/1.1" 200 2584
+INFO 2026-03-13 12:44:32,612 basehttp - Broken pipe from ('127.0.0.1', 53112)
+INFO 2026-03-13 12:44:32,648 basehttp "GET /static/css/carrito.css HTTP/1.1" 200 10190
+WARNING 2026-03-13 12:44:32,858 log Not Found: /@vite/client
+WARNING 2026-03-13 12:44:32,864 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 12:44:40,636 basehttp "GET /checkout/ HTTP/1.1" 200 7621
+WARNING 2026-03-13 12:44:42,229 log Not Found: /@vite/client
+WARNING 2026-03-13 12:44:42,230 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 12:47:55,131 basehttp "GET /checkout/ HTTP/1.1" 200 7560
+INFO 2026-03-13 12:47:55,148 basehttp "GET /static/css/carrito.css HTTP/1.1" 200 10190
+WARNING 2026-03-13 12:47:56,743 log Not Found: /@vite/client
+WARNING 2026-03-13 12:47:56,743 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 12:49:05,874 basehttp "GET /checkout/ HTTP/1.1" 200 7560
+INFO 2026-03-13 12:55:42,594 basehttp "GET / HTTP/1.1" 200 8549
+INFO 2026-03-13 12:55:42,615 basehttp "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-03-13 12:55:42,708 basehttp - Broken pipe from ('127.0.0.1', 51702)
+INFO 2026-03-13 12:55:44,146 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+WARNING 2026-03-13 12:55:44,384 log Not Found: /@vite/client
+WARNING 2026-03-13 12:55:44,387 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 12:55:49,279 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 12:56:04,947 basehttp - Broken pipe from ('127.0.0.1', 59315)
+INFO 2026-03-13 12:56:05,207 basehttp - Broken pipe from ('127.0.0.1', 58449)
+INFO 2026-03-13 12:56:05,933 basehttp "GET / HTTP/1.1" 200 8024
+INFO 2026-03-13 12:56:06,062 basehttp "GET /static/css/home.css HTTP/1.1" 200 22967
+INFO 2026-03-13 12:56:06,098 basehttp "GET /media/productos/enterizo.avif HTTP/1.1" 200 5071
+INFO 2026-03-13 12:56:06,113 basehttp "GET /static/img/vestido.jpeg HTTP/1.1" 200 38696
+INFO 2026-03-13 12:56:06,122 basehttp "GET /static/img/accesorios.jpeg HTTP/1.1" 200 29151
+INFO 2026-03-13 12:56:06,128 basehttp "GET /static/img/bolsos.jpeg HTTP/1.1" 200 60273
+INFO 2026-03-13 12:56:07,888 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 12:56:12,438 basehttp "GET /login/ HTTP/1.1" 200 1994
+INFO 2026-03-13 12:56:12,538 basehttp "GET /static/css/login.css HTTP/1.1" 200 7936
+INFO 2026-03-13 12:56:12,538 basehttp - Broken pipe from ('127.0.0.1', 54262)
+INFO 2026-03-13 12:56:12,540 basehttp "GET /static/img/logo.jpg HTTP/1.1" 200 27130
+INFO 2026-03-13 12:56:21,443 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-03-13 12:56:21,645 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 12:56:21,695 basehttp "GET /static/css/panel_cliente.css HTTP/1.1" 200 3458
+INFO 2026-03-13 12:58:06,717 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 12:58:08,368 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 12:58:08,557 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 12:58:08,903 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 12:59:17,636 basehttp "GET / HTTP/1.1" 200 8549
+INFO 2026-03-13 12:59:17,685 basehttp "GET /static/css/home.css HTTP/1.1" 200 22967
+INFO 2026-03-13 12:59:17,690 basehttp "GET /static/img/logo.png HTTP/1.1" 200 14988
+INFO 2026-03-13 12:59:17,704 basehttp "GET /media/productos/enterizo.avif HTTP/1.1" 200 5071
+INFO 2026-03-13 12:59:17,705 basehttp "GET /media/productos/bolsos.avif HTTP/1.1" 200 131978
+INFO 2026-03-13 12:59:17,718 basehttp "GET /static/img/vestido.jpeg HTTP/1.1" 200 38696
+INFO 2026-03-13 12:59:17,720 basehttp "GET /static/img/accesorios.jpeg HTTP/1.1" 200 29151
+INFO 2026-03-13 12:59:17,721 basehttp "GET /static/img/bolsos.jpeg HTTP/1.1" 200 60273
+INFO 2026-03-13 12:59:20,032 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+WARNING 2026-03-13 12:59:20,274 log Not Found: /@vite/client
+WARNING 2026-03-13 12:59:20,276 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 12:59:22,452 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 12:59:22,461 basehttp - Broken pipe from ('127.0.0.1', 51645)
+WARNING 2026-03-13 12:59:22,663 log Not Found: /@vite/client
+WARNING 2026-03-13 12:59:22,664 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 12:59:32,001 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 12:59:32,017 basehttp "GET /static/css/panel_cliente.css HTTP/1.1" 200 3458
+WARNING 2026-03-13 12:59:32,325 log Not Found: /@vite/client
+WARNING 2026-03-13 12:59:32,325 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 12:59:50,693 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 12:59:55,136 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 12:59:55,148 basehttp "GET /static/css/panel_cliente.css HTTP/1.1" 200 3458
+WARNING 2026-03-13 12:59:55,247 log Not Found: /@vite/client
+WARNING 2026-03-13 12:59:55,249 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 12:59:56,438 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 12:59:56,451 basehttp "GET /static/css/panel_cliente.css HTTP/1.1" 200 3458
+WARNING 2026-03-13 12:59:56,548 log Not Found: /@vite/client
+WARNING 2026-03-13 12:59:56,549 basehttp "GET /@vite/client HTTP/1.1" 404 10966
+INFO 2026-03-13 13:00:05,652 basehttp "GET / HTTP/1.1" 200 8037
+INFO 2026-03-13 13:00:05,751 basehttp "GET /static/css/home.css HTTP/1.1" 200 22967
+INFO 2026-03-13 13:00:06,049 basehttp - Broken pipe from ('127.0.0.1', 61612)
+INFO 2026-03-13 13:00:06,950 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:00:11,586 basehttp "GET /panel_cliente/ HTTP/1.1" 302 0
+INFO 2026-03-13 13:00:11,594 basehttp "GET /login/?next=/panel_cliente/ HTTP/1.1" 200 1994
+INFO 2026-03-13 13:00:11,639 basehttp "GET /static/css/login.css HTTP/1.1" 304 0
+INFO 2026-03-13 13:00:11,644 basehttp - Broken pipe from ('127.0.0.1', 64977)
+INFO 2026-03-13 13:00:40,882 basehttp "POST /login/?next=/panel_cliente/ HTTP/1.1" 302 0
+INFO 2026-03-13 13:00:40,953 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 13:00:40,983 basehttp "GET /static/css/panel_cliente.css HTTP/1.1" 200 3458
+INFO 2026-03-13 13:00:45,741 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 13:00:49,096 basehttp "GET /perfil/ HTTP/1.1" 200 1537
+INFO 2026-03-13 13:00:49,136 basehttp "GET /static/css/perfil_cliente.css HTTP/1.1" 200 3820
+INFO 2026-03-13 13:00:50,740 basehttp "GET / HTTP/1.1" 200 8549
+INFO 2026-03-13 13:00:51,695 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:04:09,009 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 13:04:30,260 basehttp "GET / HTTP/1.1" 200 8024
+INFO 2026-03-13 13:04:30,335 basehttp "GET /media/productos/enterizo.avif HTTP/1.1" 200 5071
+INFO 2026-03-13 13:04:30,342 basehttp "GET /static/css/home.css HTTP/1.1" 200 23126
+INFO 2026-03-13 13:04:32,706 basehttp - Broken pipe from ('127.0.0.1', 56387)
+INFO 2026-03-13 13:04:34,029 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:04:37,044 basehttp "GET /login/ HTTP/1.1" 200 1994
+INFO 2026-03-13 13:04:37,103 basehttp "GET /static/css/login.css HTTP/1.1" 304 0
+INFO 2026-03-13 13:04:37,462 basehttp - Broken pipe from ('127.0.0.1', 60082)
+INFO 2026-03-13 13:04:47,415 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-03-13 13:04:47,486 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 13:04:47,521 basehttp "GET /static/css/panel_cliente.css HTTP/1.1" 200 3458
+INFO 2026-03-13 13:04:50,485 basehttp "GET / HTTP/1.1" 200 9227
+INFO 2026-03-13 13:04:50,515 basehttp "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-03-13 13:04:50,779 basehttp - Broken pipe from ('127.0.0.1', 50040)
+INFO 2026-03-13 13:04:51,895 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:04:57,117 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:05:07,631 basehttp "GET /tienda/ HTTP/1.1" 200 9921
+INFO 2026-03-13 13:05:07,673 basehttp "GET /static/css/tienda.css HTTP/1.1" 200 23372
+INFO 2026-03-13 13:05:07,675 basehttp "GET /static/css/oferta.css HTTP/1.1" 200 748
+INFO 2026-03-13 13:05:07,677 basehttp "GET /media/barcodes/barcode-AJ-000002_UEpqqCV.png HTTP/1.1" 200 4044
+INFO 2026-03-13 13:05:07,678 basehttp "GET /media/barcodes/barcode-AJ-000001_TA55Nvb.png HTTP/1.1" 200 3537
+INFO 2026-03-13 13:05:59,882 basehttp "GET /panel_cliente/ HTTP/1.1" 200 1459
+INFO 2026-03-13 13:06:27,264 basehttp "GET /carrito/ HTTP/1.1" 200 3467
+INFO 2026-03-13 13:06:27,295 basehttp "GET /static/css/carrito.css HTTP/1.1" 200 11866
+INFO 2026-03-13 13:06:30,319 basehttp "POST /eliminar/13/ HTTP/1.1" 302 0
+INFO 2026-03-13 13:06:30,403 basehttp "GET /carrito/ HTTP/1.1" 200 1572
+INFO 2026-03-13 13:06:32,632 basehttp "GET / HTTP/1.1" 200 9227
+INFO 2026-03-13 13:06:32,657 basehttp "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-03-13 13:06:33,971 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:06:39,160 basehttp "GET /agregar/2/ HTTP/1.1" 302 0
+INFO 2026-03-13 13:06:39,263 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:06:39,281 basehttp "GET /carrito/ HTTP/1.1" 200 3465
+INFO 2026-03-13 13:06:44,433 basehttp "GET /checkout/ HTTP/1.1" 200 8438
+INFO 2026-03-13 13:08:11,345 basehttp "GET / HTTP/1.1" 200 9227
+INFO 2026-03-13 13:08:11,382 basehttp "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-03-13 13:08:11,784 basehttp - Broken pipe from ('127.0.0.1', 56782)
+INFO 2026-03-13 13:08:12,971 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:08:18,164 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:08:33,544 basehttp - Broken pipe from ('127.0.0.1', 52760)
+INFO 2026-03-13 13:08:34,527 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:10:19,709 basehttp "GET /static/css/home.css HTTP/1.1" 304 0
+WARNING 2026-03-13 13:10:19,839 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-03-13 13:10:19,839 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11074
+WARNING 2026-03-13 13:11:50,123 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-03-13 13:11:50,124 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11074
+INFO 2026-03-13 13:12:15,022 basehttp "GET / HTTP/1.1" 200 9231
+WARNING 2026-03-13 13:12:15,167 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-03-13 13:12:15,168 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11074
+INFO 2026-03-13 13:12:15,187 basehttp "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-03-13 13:12:16,622 basehttp - Broken pipe from ('127.0.0.1', 62306)
+INFO 2026-03-13 13:12:16,640 basehttp - Broken pipe from ('127.0.0.1', 49203)
+INFO 2026-03-13 13:12:18,902 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:12:32,725 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:12:34,923 basehttp "GET / HTTP/1.1" 200 9231
+INFO 2026-03-13 13:12:38,601 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:12:43,811 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:15:15,726 autoreload Watching for file changes with StatReloader
+INFO 2026-03-13 13:15:19,538 basehttp "GET / HTTP/1.1" 200 9231
+INFO 2026-03-13 13:15:19,610 basehttp "GET /static/css/home.css HTTP/1.1" 200 23829
+INFO 2026-03-13 13:15:21,212 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:15:26,364 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+WARNING 2026-03-13 13:15:27,458 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-03-13 13:15:27,458 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11074
+INFO 2026-03-13 13:15:41,969 basehttp - Broken pipe from ('127.0.0.1', 60204)
+INFO 2026-03-13 13:15:42,193 basehttp - Broken pipe from ('127.0.0.1', 62883)
+INFO 2026-03-13 13:18:08,448 basehttp "GET / HTTP/1.1" 200 9231
+WARNING 2026-03-13 13:18:08,585 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-03-13 13:18:08,587 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11074
+INFO 2026-03-13 13:18:08,593 basehttp "GET /static/css/home.css HTTP/1.1" 200 24093
+INFO 2026-03-13 13:18:10,087 basehttp - Broken pipe from ('127.0.0.1', 62641)
+INFO 2026-03-13 13:18:10,098 basehttp - Broken pipe from ('127.0.0.1', 50800)
+INFO 2026-03-13 13:18:12,276 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:18:17,560 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:18:33,077 basehttp - Broken pipe from ('127.0.0.1', 54182)
+INFO 2026-03-13 13:18:33,396 basehttp - Broken pipe from ('127.0.0.1', 61384)
+INFO 2026-03-13 13:23:31,677 basehttp "GET / HTTP/1.1" 200 9231
+WARNING 2026-03-13 13:23:32,155 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-03-13 13:23:32,161 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 11074
+INFO 2026-03-13 13:23:32,167 basehttp "GET /static/css/home.css HTTP/1.1" 200 25288
+INFO 2026-03-13 13:23:34,314 basehttp - Broken pipe from ('127.0.0.1', 50749)
+INFO 2026-03-13 13:23:34,325 basehttp - Broken pipe from ('127.0.0.1', 53560)
+INFO 2026-03-13 13:23:37,318 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:23:42,754 basehttp "GET /static/img/video/fondo.mp4 HTTP/1.1" 200 112235702
+INFO 2026-03-13 13:23:58,073 basehttp - Broken pipe from ('127.0.0.1', 52674)
+INFO 2026-03-13 13:23:58,321 basehttp - Broken pipe from ('127.0.0.1', 57454)

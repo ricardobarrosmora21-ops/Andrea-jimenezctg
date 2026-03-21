@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea Jimenez | Ofertas Especiales</title>
+    <link rel="icon" href="{% static 'img/favicon-round.png' %}" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/tienda.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <link rel="stylesheet" href="{% static 'css/oferta.css' %}">
+</head>
+<body>
+
+<div class="page-loader">
+    <div class="loader-logo">Andrea Jimenez</div>
+</div>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'img/logo.png' %}" alt="Andrea Jimenez" class="logo-img">
+            </a>
+        </div>
+
+        <ul class="menu">
+            <li><a href="{% url 'home' %}"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a href="{% url 'tienda' %}"><i class="fa-solid fa-store"></i> Tienda</a></li>
+            <li><a href="{% url 'oferta' %}" class="active"><i class="fa-solid fa-tags"></i> Oferta</a></li>
+            <li><a href="{% url 'atencion' %}"><i class="fa-solid fa-headset"></i> Atencion al cliente</a></li>
+            <li><a href="{% url 'distribuidores' %}"><i class="fa-solid fa-location-dot"></i> Ubicacion</a></li>
+        </ul>
+
+        <div class="user-actions">
+            {% if user.is_authenticated and es_cliente %}
+                <div class="cart">
+                    <a href="{% url 'carrito' %}" aria-label="Bolsa de compras"><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+            {% endif %}
+
+            {% if user.is_authenticated %}
+                <div class="dropdown">
+                    <button class="dropdown-btn">
+                        <i class="fa-regular fa-user"></i> 
+                        {% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}
+                        <i class="fa-solid fa-chevron-down" style="font-size: 0.5rem; margin-left: 5px;"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="{% url 'panel_cliente' %}"><i class="fa-regular fa-user"></i> Mi Perfil</a>
+                        <a href="{% url 'carrito' %}"><i class="fa-solid fa-bag-shopping"></i> Carrito</a>
+                        <a href="{% url 'mis_ventas' %}"><i class="fa-solid fa-clock-rotate-left"></i> Mis Compras</a>
+                        <div style="border-top: 1px solid rgba(255,255,255,0.1); margin: 5px 0;"></div>
+                        <a href="{% url 'logout' %}" style="color: #ff7a9c;"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar Sesión</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+</header>
+
+<main class="contenedor-ofertas fade-in-section">
+    <div class="titulo-ofertas">
+        <h1>Ofertas Especiales</h1>
+        <p>Descubre nuestras mejores promociones con descuentos exclusivos</p>
+    </div>
+
+    {% if productos %}
+        <div class="grid-ofertas">
+            {% for producto in productos %}
+            <div class="card-oferta">
+                <div class="card-imagen-container">
+                    {% if producto.imagen %}
+                        {% if user.is_authenticated and es_cliente %}
+                            <a href="{% url 'agregar_al_carrito' producto.id %}">
+                                <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" class="card-imagen">
+                            </a>
+                        {% else %}
+                            <a href="{{ producto.imagen.url }}" data-lightbox="oferta" data-title="{{ producto.nombre }}">
+                                <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" class="card-imagen">
+                            </a>
+                        {% endif %}
+                    {% else %}
+                        <div class="sin-imagen"><i class="fa-regular fa-image"></i> Imagen no disponible</div>
+                    {% endif %}
+                    <span class="etiqueta-oferta"><i class="fa-solid fa-fire"></i> Oferta especial</span>
+                </div>
+
+                <div class="card-contenido">
+                    <h3 class="card-titulo">{{ producto.nombre }}</h3>
+                    {% if producto.descripcion %}
+                        <p class="card-descripcion">{{ producto.descripcion }}</p>
+                    {% endif %}
+                    {% if producto.codigo_barras %}
+                    <div class="product-barcode-client">
+                        <img src="{{ producto.barcode_image.url }}" alt="Código de barras" class="barcode-img-small">
+                        <span class="barcode-text">{{ producto.codigo_barras }}</span>
+                    </div>
+                    {% endif %}
+                    <div class="card-precio">
+                        <span class="precio-oferta">COP ${{ producto.precio }}</span>
+                    </div>
+                    {% if user.is_authenticated and es_cliente %}
+                        <a href="{% url 'agregar_al_carrito' producto.id %}" class="card-boton"><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</a>
+                    {% elif not user.is_authenticated %}
+                        <a href="{% url 'registro' %}" class="card-boton iniciar-sesion"><i class="fa-solid fa-right-to-bracket"></i> Inicia sesion para aprovechar las ofertas</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if page_obj.paginator.num_pages > 1 %}
+        <nav class="paginacion">
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link"><i class="fa-solid fa-chevron-left"></i> Anterior</a>
+            {% else %}
+                <span class="page-link disabled"><i class="fa-solid fa-chevron-left"></i> Anterior</span>
+            {% endif %}
+            <span class="page-info">Pagina {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="page-link">Siguiente <i class="fa-solid fa-chevron-right"></i></a>
+            {% else %}
+                <span class="page-link disabled">Siguiente <i class="fa-solid fa-chevron-right"></i></span>
+            {% endif %}
+        </nav>
+        {% endif %}
+    {% else %}
+        <div class="sin-ofertas">
+            <i class="fa-solid fa-tag"></i>
+            <h3>No hay ofertas disponibles por ahora</h3>
+            <p>Vuelve pronto, estamos preparando nuevas promociones para ti.</p>
+            <a href="{% url 'tienda' %}" class="card-boton"><i class="fa-solid fa-store"></i> Ir a la tienda</a>
+        </div>
+    {% endif %}
+</main>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Conecta</h3>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h3>Newsletter</h3>
+            <form action="#">
+                <input type="email" placeholder="Tu email" required>
+                <button type="submit"><i class="fa-solid fa-paper-plane"></i> Suscribirse</button>
+            </form>
+        </div>
+        <div class="footer-col">
+            <h3>Contacto</h3>
+            <p><i class="fa-solid fa-phone"></i> +{{ whatsapp_number }}</p>
+            <p><i class="fa-solid fa-envelope"></i> info@andreajimenez.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Andrea Jimenez</p>
+    </div>
+</footer>
+
+<a href="https://api.whatsapp.com/send?phone={{ whatsapp_number }}&text=Hola,%20necesito%20ayuda%20con%20mi%20pedido%20en%20Andrea%20Jiménez" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script>
+window.addEventListener('load', function() {
+    var loader = document.querySelector('.page-loader');
+    if (loader) { setTimeout(function() { loader.style.opacity = '0'; setTimeout(function() { loader.style.display = 'none'; }, 600); }, 500); }
+});
+window.addEventListener('scroll', function() {
+    var header = document.querySelector('header');
+    if (window.scrollY > 60) { header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); }
+});
+var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in-section').forEach(function(el) { observer.observe(el); });
+</script>
+</body>
+</html>
