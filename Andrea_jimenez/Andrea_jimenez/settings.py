@@ -118,7 +118,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 WHITENOISE_MANIFEST_STRICT = False
 
 # Backwards compatibility for django-cloudinary-storage
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # Whitenoise compression
 STORAGES = {
@@ -126,7 +126,7 @@ STORAGES = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
 }
 
