@@ -325,7 +325,7 @@ def checkout(request):
     return render(request, "cliente/checkout.html", {
         "carrito_items": items,
         "total": total,
-        "paypal_client_id": settings.PAYPAL_CLIENT_ID,
+        "paypal_client_id": settings.PAYPAL_CLIENT_ID or "test",
         "paypal_currency": settings.PAYPAL_CURRENCY,
     })
 
