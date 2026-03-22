@@ -1,0 +1,10 @@
+571da85 Fix Cloudinary Empty file exception on barcode save
+a8a212a Fix crear_producto 500 error and email tracking URL
+e7a1489 Fix trailing spaces in email env vars
+cc350d4 Enable detailed logging for email errors
+9732503 Add success message and email invoice notification to frontend
+84c2e29 Corregido el remitente de Brevo
+4c2a1ee Fix checkout validation and set EMAIL_TIMEOUT to prevent gunicorn worker crashes
+57a1d8c Fallback to 'test' for empty PAYPAL_CLIENT_ID to prevent script 400 error
+96312bf Auto-create Cliente profile if missing to prevent 404 in cart actions
+ab0d1ba Use default StaticFilesStorage to bypass compression errors completely

@@ -22,6 +22,7 @@ from django.conf import settings
 import datetime
 import logging
 from django.core.paginator import Paginator
+from django.views.decorators.cache import never_cache
 
 logger = logging.getLogger(__name__)
 
@@ -98,8 +99,15 @@ def registro(request):
 
 def inicio_sesion(request):
     if request.method == "POST":
-        username = request.POST.get("username")
+        raw_username = request.POST.get("username", "").strip()
         password = request.POST.get("password")
+
+        # Intentar buscar por email si el input contiene '@'
+        username = raw_username
+        if "@" in raw_username:
+            user_obj = User.objects.filter(email=raw_username).first()
+            if user_obj:
+                username = user_obj.username
 
         user = authenticate(request, username=username, password=password)
         if user is not None:
@@ -622,6 +630,7 @@ def descargar_factura_pdf(request, venta_id):
 #        ADMIN
 # =====================================================
 
+@never_cache
 @user_passes_test(es_admin)
 def panel_admin(request):
     # 1. Estadísticas Generales
@@ -729,6 +738,7 @@ def panel_admin(request):
     return render(request, "admin/panel_admin.html", context)
 
 
+@never_cache
 @login_required
 @user_passes_test(es_admin)
 def gestion_productos(request):
@@ -908,6 +918,7 @@ def eliminar_producto(request, prenda_id):
 #        CLIENTES Y CATEGORÍAS
 # =====================================================
 
+@never_cache
 @login_required
 @user_passes_test(es_admin)
 def gestion_clientes(request):
@@ -997,6 +1008,7 @@ def detalle_producto_ajax(request, prenda_id):
     })
 
 
+@never_cache
 @login_required
 @user_passes_test(es_admin)
 def gestion_ventas(request):
@@ -1061,6 +1073,7 @@ def gestion_ventas(request):
     return render(request, "admin/gestion_ventas.html", context)
 
 
+@never_cache
 @login_required
 @user_passes_test(es_admin)
 def gestion_categorias(request):

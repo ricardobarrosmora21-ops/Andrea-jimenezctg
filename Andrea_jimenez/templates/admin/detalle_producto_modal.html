@@ -1,0 +1,28 @@
+<div class="product-detail-modal">
+    <div style="display: flex; gap: 20px;">
+        {% if producto.imagen %}
+        <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" style="max-width: 200px; border-radius: 8px;">
+        {% else %}
+        <div style="width: 200px; height: 200px; background: #eee; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+            <i class="fas fa-image" style="font-size: 3rem; color: #ccc;"></i>
+        </div>
+        {% endif %}
+        <div>
+            <h4 style="margin-top: 0; font-size: 1.5rem;">{{ producto.nombre }}</h4>
+            <p><strong>Categoría:</strong> {{ producto.categoria.nombre|default:"Sin categoría" }}</p>
+            <p><strong>Precio:</strong> COP ${{ producto.precio|floatformat:0 }}</p>
+            {% if producto.precio_descuento %}
+            <p><strong>Precio Oferta:</strong> <span style="color: #ff7a9c;">COP ${{ producto.precio_descuento|floatformat:0 }}</span></p>
+            {% endif %}
+            <p><strong>Stock:</strong> {{ producto.stock }} unidades</p>
+            <p><strong>Código de Barras:</strong> {{ producto.codigo_barras|default:"No asignado" }}</p>
+            <p><strong>Destacado:</strong> {% if producto.es_destacado %}Sí{% else %}No{% endif %}</p>
+        </div>
+    </div>
+    {% if producto.descripcion %}
+    <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee;">
+        <strong>Descripción:</strong>
+        <p style="margin-top: 10px;">{{ producto.descripcion }}</p>
+    </div>
+    {% endif %}
+</div>
