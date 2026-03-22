@@ -43,6 +43,9 @@
                         <i class="fa-solid fa-chevron-down" style="font-size: 0.5rem; margin-left: 5px;"></i>
                     </button>
                     <div class="dropdown-content">
+                        {% if es_admin %}
+                        <a href="{% url 'panel_admin' %}" style="color: #00d2ff;"><i class="fas fa-lock"></i> Panel Admin</a>
+                        {% endif %}
                         <a href="{% url 'panel_cliente' %}"><i class="fa-regular fa-user"></i> Mi Perfil</a>
                         <a href="{% url 'carrito' %}"><i class="fa-solid fa-bag-shopping"></i> Carrito</a>
                         <a href="{% url 'mis_ventas' %}"><i class="fa-solid fa-clock-rotate-left"></i> Mis Compras</a>

@@ -40,23 +40,6 @@ def descontar_stock(sender, instance, created, **kwargs):
 
 
 # --------------------------------------------------
-# 3. Archivar producto en lugar de eliminarlo
-# --------------------------------------------------
-
-@receiver(pre_delete, sender=Prenda)
-def archivar_producto(sender, instance, **kwargs):
-    """
-    Antes de eliminar una prenda, la archivamos y evitamos su borrado.
-    """
-
-    instance.is_archived = True
-    instance.save()
-
-    # Evita la eliminación sin romper Django
-    raise PermissionDenied("Eliminación bloqueada. El producto fue archivado correctamente.")
-
-
-# --------------------------------------------------
 # 4. Crear Usuario Admin automáticamente (POST MIGRATE)
 # --------------------------------------------------
 

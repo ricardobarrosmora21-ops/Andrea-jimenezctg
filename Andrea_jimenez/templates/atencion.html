@@ -37,6 +37,9 @@
                 {% endif %}
 
                 {% if user.is_authenticated %}
+                    {% if es_admin %}
+                        <a href="{% url 'panel_admin' %}" class="btn-logout" style="background: #00d2ff; margin-right: 10px;"><i class="fas fa-lock"></i> Admin</a>
+                    {% endif %}
                     <a href="{% url 'panel_cliente' %}" class="user-name">
                         <i class="fa-regular fa-user"></i> 
                         {% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}

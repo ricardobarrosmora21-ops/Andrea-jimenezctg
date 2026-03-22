@@ -4,14 +4,20 @@ from barcode.writer import ImageWriter
 from io import BytesIO
 from reportlab.lib.utils import ImageReader
 from django.conf import settings
+from django.contrib.auth.models import Group
 import qrcode
-
 from reportlab.lib.pagesizes import A4
 from reportlab.lib import colors
 from reportlab.lib.units import mm
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer, Image, HRFlowable
 from reportlab.lib.enums import TA_CENTER, TA_RIGHT
+
+def es_admin(user):
+    return user.username == "admin_master"
+
+def es_cliente(user):
+    return user.groups.filter(name="Cliente").exists() or es_admin(user) or user.is_superuser
 
 def numero_a_letras(numero):
     """

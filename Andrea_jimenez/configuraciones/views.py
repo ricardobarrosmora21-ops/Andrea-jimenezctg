@@ -14,7 +14,9 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
-from configuraciones.utils import generate_invoice_pdf, numero_a_letras
+from configuraciones.utils import (
+    numero_a_letras, generate_invoice_pdf, es_admin, es_cliente
+)
 from django.conf import settings
 import datetime
 import logging
@@ -23,15 +25,7 @@ from django.core.paginator import Paginator
 logger = logging.getLogger(__name__)
 
 
-# =====================================================
-#        HELPERS (ROLES)
-# =====================================================
 
-def es_admin(user):
-    return user.username == "admin_master"
-
-def es_cliente(user):
-    return user.groups.filter(name="Cliente").exists() or es_admin(user) or user.is_superuser
 
 
 # =====================================================
@@ -759,7 +753,7 @@ def gestion_productos(request):
     if order_field != '-id':
         order_field = f"{order_prefix}{order_field}"
     
-    productos_qs = Prenda.objects.all().order_by(order_field)
+    productos_qs = Prenda.objects.filter(is_archived=False).order_by(order_field)
     
     # Aplicar búsqueda
     if search_query:
@@ -898,7 +892,9 @@ def editar_producto(request, prenda_id):
 @user_passes_test(es_admin)
 def eliminar_producto(request, prenda_id):
     prenda = get_object_or_404(Prenda, id=prenda_id)
-    prenda.delete()
+    prenda.is_archived = True
+    prenda.archived_at = timezone.now()
+    prenda.save()
     messages.success(request, f"Producto '{prenda.nombre}' eliminado correctamente.")
     return redirect("gestion_productos")
 

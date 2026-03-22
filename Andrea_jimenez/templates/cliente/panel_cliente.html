@@ -18,6 +18,10 @@
 
 <a href="{% url 'home' %}">Inicio</a>
 
+{% if es_admin %}
+<a href="{% url 'panel_admin' %}" style="color: #00d2ff; font-weight: bold;">Panel Admin</a>
+{% endif %}
+
 <a href="{% url 'perfil_cliente' %}">Mi Perfil</a>
 
 <a href="{% url 'carrito' %}">Carrito</a>
