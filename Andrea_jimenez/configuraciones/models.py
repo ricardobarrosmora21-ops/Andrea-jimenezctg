@@ -126,13 +126,14 @@ class Prenda(models.Model):
         ]
 
     def save(self, *args, **kwargs):
-        # 0. Auto-archivo/desarchivo por stock
-        if self.stock <= 0 and not self.is_archived:
-            self.is_archived = True
-            self.archived_at = timezone.now()
-        elif self.stock > 0 and self.is_archived:
-            self.is_archived = False
-            self.archived_at = None
+        # 0. Auto-archivo/desarchivo por stock (OPCIONAL: Comentado para permitir borrado manual sin que el stock lo restaure)
+        # if self.stock <= 0 and not self.is_archived:
+        #     self.is_archived = True
+        #     self.archived_at = timezone.now()
+        # elif self.stock > 0 and self.is_archived:
+        #     # Solo restaurar si no fue archivado manualmente (aquí podrías añadir lógica extra si fuera necesario)
+        #     # Por ahora lo comentamos para que el "Eliminar" manual sea definitivo
+        #     pass
 
         # 1. Asignar slug único automáticamente
         if not self.slug:
