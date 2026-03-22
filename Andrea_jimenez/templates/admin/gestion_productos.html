@@ -447,6 +447,42 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // --- VIEW PRODUCT MODAL LOGIC ---
+    const productModal = document.getElementById('productModal');
+    const productModalBody = document.getElementById('productModalBody');
+    
+    document.querySelectorAll('.view-product-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const id = this.dataset.id;
+            productModalBody.innerHTML = '<div style="text-align:center; padding:20px;"><i class="fas fa-spinner fa-spin fa-2x"></i></div>';
+            productModal.classList.add('active');
+            
+            fetch(`/detalle_producto/${id}/`)
+                .then(response => response.text())
+                .then(html => {
+                    productModalBody.innerHTML = html;
+                })
+                .catch(error => {
+                    productModalBody.innerHTML = '<div style="color:red; padding:20px;">Error al cargar datos.</div>';
+                });
+        });
+    });
+
+    document.getElementById('closeProductModal').addEventListener('click', () => {
+        productModal.classList.remove('active');
+    });
+
+    productModal.addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.classList.remove('active');
+        }
+    });
+    // --------------------------------
+        if (e.target === this) {
+            this.classList.remove('active');
+        }
+    });
+
     // Refresh button
     document.getElementById('refreshBtn').addEventListener('click', () => {
         window.location.reload();

@@ -989,6 +989,15 @@ def detalle_cliente_ajax(request, cliente_id):
 
 @login_required
 @user_passes_test(es_admin)
+def detalle_producto_ajax(request, prenda_id):
+    producto = get_object_or_404(Prenda, id=prenda_id)
+    return render(request, "admin/detalle_producto_modal.html", {
+        "producto": producto
+    })
+
+
+@login_required
+@user_passes_test(es_admin)
 def gestion_ventas(request):
     hoy = datetime.datetime.now()
     inicio_mes = hoy.replace(day=1, hour=0, minute=0, second=0, microsecond=0)

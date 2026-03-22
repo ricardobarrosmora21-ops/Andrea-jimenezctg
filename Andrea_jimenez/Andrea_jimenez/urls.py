@@ -82,6 +82,7 @@ urlpatterns = [
     path("crear_producto/", views.crear_producto, name="crear_producto"),
     path("editar_producto/<int:prenda_id>/", views.editar_producto, name="editar_producto"),
     path("eliminar_producto/<int:prenda_id>/", views.eliminar_producto, name="eliminar_producto"),
+    path("detalle_producto/<int:prenda_id>/", views.detalle_producto_ajax, name="detalle_producto_ajax"),
 
     path("gestion_clientes/", views.gestion_clientes, name="gestion_clientes"),
     path("detalle_cliente/<int:cliente_id>/", views.detalle_cliente_ajax, name="detalle_cliente_ajax"),
