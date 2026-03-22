@@ -14,6 +14,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+from django.utils import timezone
 from configuraciones.utils import (
     numero_a_letras, generate_invoice_pdf, es_admin, es_cliente
 )
