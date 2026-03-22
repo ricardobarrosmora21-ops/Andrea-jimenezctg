@@ -132,7 +132,7 @@ def cerrar_sesion(request):
 # =====================================================
 
 def home(request):
-    productos_carrusel = Prenda.objects.filter(is_archived=False).order_by("-id")[:12]
+    productos_carrusel = Prenda.objects.filter(is_archived=False, es_destacado=True).order_by("-id")[:12]
     es_cliente_user = request.user.is_authenticated and es_cliente(request.user)
     return render(request, "home.html", {
         "productos_carrusel": productos_carrusel,
@@ -832,6 +832,7 @@ def crear_producto(request):
         
         categoria_id = request.POST.get("categoria")
         imagen = request.FILES.get("imagen")
+        es_destacado = request.POST.get("es_destacado") == "on"
 
         categoria = get_object_or_404(Categoria, id=categoria_id)
 
@@ -842,7 +843,8 @@ def crear_producto(request):
             precio_descuento=precio_descuento,
             stock=stock,
             categoria=categoria,
-            imagen=imagen
+            imagen=imagen,
+            es_destacado=es_destacado
         )
 
         messages.success(request, f"Producto '{nombre}' creado correctamente.")
@@ -869,6 +871,8 @@ def editar_producto(request, prenda_id):
         
         stock_str = request.POST.get("stock", "0").strip()
         producto.stock = int(stock_str) if stock_str else 0
+        
+        producto.es_destacado = request.POST.get("es_destacado") == "on"
         
         categoria_id = request.POST.get("categoria")
 
