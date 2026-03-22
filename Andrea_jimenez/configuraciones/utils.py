@@ -210,7 +210,7 @@ def generate_invoice_pdf(venta, buffer=None):
                     barcode_flowable = "ERROR IMG"
         
         data_items.append([
-            getattr(d.prenda, 'codigo_barras', None) or f"AJ-{d.prenda.id:04d}",
+            getattr(d.prenda, 'codigo_barras', None) or (f"AJ-{d.prenda.id:06d}" if d.prenda else "—"),
             Paragraph(f"<b>{d.prenda.nombre.upper()}</b>", styles['Normal']),
             barcode_flowable,
             str(d.cantidad),

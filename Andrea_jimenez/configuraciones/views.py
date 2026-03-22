@@ -590,7 +590,7 @@ def factura_imprimir(request, venta_id):
             "precio_unitario": d.precio_unitario,
             "subtotal": d.cantidad * d.precio_unitario,
             "barcode_url": d.prenda.barcode_image.url if d.prenda and d.prenda.barcode_image else None,
-            "codigo_barras": d.prenda.codigo_barras if d.prenda else f"AJ-{d.prenda.id:04d}"
+            "codigo_barras": d.prenda.codigo_barras if d.prenda and d.prenda.codigo_barras else (f"AJ-{d.prenda.id:06d}" if d.prenda else "—")
         }
         for d in items
     ]
