@@ -127,7 +127,7 @@ def cerrar_sesion(request):
 # =====================================================
 
 def home(request):
-    productos_carrusel = Prenda.objects.filter(is_archived=False, es_destacado=True).order_by("-id")[:12]
+    productos_carrusel = Prenda.objects.filter(is_archived=False, stock__gt=0, es_destacado=True).order_by("-id")[:12]
     es_cliente_user = request.user.is_authenticated and es_cliente(request.user)
     return render(request, "home.html", {
         "productos_carrusel": productos_carrusel,
@@ -140,7 +140,7 @@ def tienda(request):
     min_price = request.GET.get('min_price')
     max_price = request.GET.get('max_price')
 
-    productos_qs = Prenda.objects.filter(is_archived=False).order_by("-id")
+    productos_qs = Prenda.objects.filter(is_archived=False, stock__gt=0).order_by("-id")
 
     if search_query:
         productos_qs = productos_qs.filter(nombre__icontains=search_query)
@@ -171,7 +171,7 @@ def tienda(request):
     })
 
 def oferta(request):
-    productos_qs = Prenda.objects.filter(is_archived=False, precio_descuento__isnull=False).order_by("-id")
+    productos_qs = Prenda.objects.filter(is_archived=False, stock__gt=0, precio_descuento__isnull=False).order_by("-id")
     paginator = Paginator(productos_qs, 9)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
