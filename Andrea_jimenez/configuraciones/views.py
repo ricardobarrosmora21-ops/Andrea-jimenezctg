@@ -748,6 +748,10 @@ def gestion_productos(request):
         '-id': '-id'
     }
     
+    # FIX: Restaurar productos que fueron auto-archivados por falta de stock en la lógica anterior
+    # Esto asegura que los productos agotados vuelvan a ser visibles en el panel.
+    Prenda.objects.filter(stock=0, is_archived=True).update(is_archived=False, archived_at=None)
+    
     order_prefix = '-' if order == 'desc' else ''
     order_field = sort_mapping.get(sort_by, '-id')
     
