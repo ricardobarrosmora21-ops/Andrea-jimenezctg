@@ -1064,8 +1064,25 @@ def gestion_ventas(request):
 @login_required
 @user_passes_test(es_admin)
 def gestion_categorias(request):
-    categorias = Categoria.objects.all().order_by("nombre")
-    return render(request, "admin/gestion_categorias.html", {"categorias": categorias})
+    # Anotamos con el conteo de productos NO archivados
+    categorias = Categoria.objects.annotate(
+        productos_count=Count('prendas', filter=Q(prendas__is_archived=False))
+    ).order_by("nombre")
+
+    # Estadísticas para el resumen
+    total_categorias = categorias.count()
+    total_productos = Prenda.objects.filter(is_archived=False).count()
+    categoria_mas_productos = categorias.order_by("-productos_count").first()
+    categorias_activas = categorias.filter(productos_count__gt=0).count()
+
+    context = {
+        "categorias": categorias,
+        "total_categorias": total_categorias,
+        "total_productos": total_productos,
+        "categoria_mas_productos": categoria_mas_productos,
+        "categorias_activas": categorias_activas,
+    }
+    return render(request, "admin/gestion_categorias.html", context)
 
 
 @login_required
