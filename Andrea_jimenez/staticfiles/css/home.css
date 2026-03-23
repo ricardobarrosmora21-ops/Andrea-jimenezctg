@@ -28,7 +28,9 @@
 
 html {
     overflow-y: scroll;
+    overflow-x: hidden;
     scroll-behavior: smooth;
+    max-width: 100vw;
 }
 
 body {
@@ -40,6 +42,8 @@ body {
     z-index: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 /* =========================================
@@ -91,19 +95,7 @@ body {
 }
 
 .overlay-fondo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        180deg,
-        rgba(26, 26, 26, 0.65) 0%,
-        rgba(26, 26, 26, 0.2) 40%,
-        rgba(26, 26, 26, 0.5) 100%
-    );
-    z-index: -1;
-    pointer-events: none;
+    display: none;
 }
 
 /* =========================================
@@ -364,7 +356,7 @@ header.scrolled .logo-img {
     font-size: 4rem;
     font-weight: 400;
     line-height: 1.2;
-    color: var(--crema);
+    color: var(--negro);
     margin: 0 0 10px 0;
     letter-spacing: -0.5px;
 }
@@ -378,7 +370,7 @@ header.scrolled .logo-img {
 }
 
 .resaltado {
-    color: var(--crema);
+    color: var(--negro);
     font-weight: 600;
     display: inline-block;
     margin: 5px 0;
@@ -425,7 +417,7 @@ header.scrolled .logo-img {
     width: 46px;
     height: 46px;
     border: 1px solid rgba(232, 180, 184, 0.3);
-    background: rgba(26, 26, 26, 0.6);
+    background: var(--blanco);
     color: var(--rosado);
     font-size: 1.4rem;
     line-height: 1;
@@ -462,20 +454,19 @@ header.scrolled .logo-img {
 
 .carrusel-card {
     display: block;
-    background: rgba(26, 26, 26, 0.75);
+    background: var(--blanco);
     border: 1px solid rgba(232, 180, 184, 0.1);
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--sombra-suave);
     text-decoration: none;
     color: inherit;
     transition: var(--transicion);
-    backdrop-filter: blur(10px);
 }
 
 .carrusel-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    border-color: rgba(232, 180, 184, 0.35);
+    box-shadow: var(--sombra-media);
+    border-color: var(--rosado);
 }
 
 .carrusel-img {
@@ -493,11 +484,11 @@ header.scrolled .logo-img {
 .carrusel-img-placeholder {
     width: 100%;
     height: 260px;
-    background: var(--negro);
+    background: #f5ede0;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(250, 240, 225, 0.3);
+    color: #aaa;
     font-size: 0.8rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -514,8 +505,8 @@ header.scrolled .logo-img {
 .carrusel-nombre {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.78rem;
-    font-weight: 400;
-    color: rgba(250, 240, 225, 0.85);
+    font-weight: 500;
+    color: var(--negro);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -535,15 +526,15 @@ header.scrolled .logo-img {
     margin-top: 10px;
     padding: 12px 16px;
     text-align: center;
-    background: transparent;
-    color: var(--rosado);
+    background: var(--negro);
+    color: var(--crema);
     font-family: 'Montserrat', sans-serif;
     font-size: 0.68rem;
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
     text-decoration: none;
-    border: 1px solid rgba(232, 180, 184, 0.35);
+    border: 1px solid var(--negro);
     transition: var(--transicion);
 }
 
@@ -555,9 +546,9 @@ header.scrolled .logo-img {
 
 .carrusel-vacio {
     padding: 30px;
-    color: rgba(250, 240, 225, 0.4);
+    color: var(--gris-texto);
     font-size: 0.85rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .carrusel-vacio a {
@@ -577,27 +568,27 @@ header.scrolled .logo-img {
 .btn {
     display: inline-block;
     background-color: transparent;
-    color: var(--crema);
+    color: var(--negro);
     padding: 16px 42px;
     text-decoration: none;
     margin: 10px 8px;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 0.72rem;
     letter-spacing: 3px;
     text-transform: uppercase;
     transition: var(--transicion);
-    border: 1px solid rgba(250, 240, 225, 0.3);
+    border: 1px solid var(--negro);
     cursor: pointer;
     position: relative;
     z-index: 2;
 }
 
 .btn:hover {
-    background: var(--crema);
+    background: var(--rosado);
     color: var(--negro);
-    border-color: var(--crema);
-    box-shadow: 0 4px 20px rgba(250, 240, 225, 0.15);
+    border-color: var(--rosado);
+    box-shadow: var(--sombra-suave);
     transform: translateY(-2px);
 }
 
@@ -647,7 +638,7 @@ header.scrolled .logo-img {
     margin-bottom: 30px;
     position: relative;
     padding-bottom: 20px;
-    color: var(--crema);
+    color: var(--negro);
     letter-spacing: 1px;
 }
 
@@ -666,8 +657,8 @@ header.scrolled .logo-img {
 .nosotros p {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.3rem;
-    font-weight: 300;
-    color: rgba(250, 240, 225, 0.6);
+    font-weight: 400;
+    color: var(--gris-texto);
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.9;
@@ -935,9 +926,7 @@ header.scrolled .logo-img {
     header {
         padding: 0 20px;
     }
-    .menu {
-        display: none; /* Podríamos implementar un menú hamburguesa, pero por ahora simplificamos */
-    }
+    /* El menu se adapta con flex-wrap más abajo */
     .hero .frase p {
         font-size: 2.2rem;
         line-height: 1.1;
@@ -972,124 +961,7 @@ header.scrolled .logo-img {
     }
 }
 
-/* Móviles (480px) */
-@media screen and (max-width: 480px) {
-    .navbar {
-        height: auto;
-        padding: 15px 20px;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    header {
-        min-height: 70px;
-    }
-    .logo-img {
-        height: 30px;
-    }
-    .user-actions {
-        gap: 12px;
-    }
-    .hero {
-        min-height: auto;
-        padding: 120px 20px 60px;
-    }
-    .hero .frase p {
-        font-size: 2rem;
-        margin-top: 0;
-    }
-    .hero .frase p .cursiva {
-        font-size: 1.1em;
-    }
-    .hero .frase p .resaltado {
-        font-size: 1.6rem;
-    }
-    .carrusel-container {
-        margin-top: 30px;
-    }
-    .carrusel-item {
-        min-width: 280px; /* Un poco más ancho para que no se vea mocho */
-        flex: 0 0 280px;
-        scroll-snap-align: center;
-    }
-    .carrusel-card {
-        width: 100%;
-    }
-    .carrusel-img {
-        height: 320px; /* Imagen un poco más alta en móvil */
-    }
-    .carrusel-nombre {
-        font-size: 0.85rem;
-        white-space: normal; /* Permitir que el nombre use dos líneas si es necesario */
-        line-height: 1.4;
-    }
-    .carrusel {
-        gap: 15px;
-        padding: 0 10px;
-    }
-    .carrusel-wrapper {
-        gap: 8px;
-        position: relative;
-    }
-    .carrusel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-        width: 40px;
-        height: 40px;
-        background: rgba(232, 180, 184, 0.9); /* Color rosado sólido para visibilidad */
-        color: var(--negro);
-        border: none;
-        border-radius: 50%;
-    }
-    .carrusel-prev { left: -10px; }
-    .carrusel-next { right: -10px; }
-    .nosotros,
-    .ofrecemos {
-        padding: 60px 20px;
-    }
-    .nosotros h2,
-    .ofrecemos h2 {
-        font-size: 2.2rem;
-        margin-bottom: 20px;
-    }
-    .nosotros p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: rgba(250, 240, 225, 0.8);
-    }
-    .subtitulo {
-        margin-bottom: 30px;
-        letter-spacing: 3px;
-    }
-    .item img {
-        width: 100%;
-        height: 350px;
-    }
-    .btn {
-        padding: 12px 24px;
-        font-size: 0.65rem;
-        width: 100%;
-        margin: 8px 0;
-    }
-    .whatsapp-btn {
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-    }
-    .carrusel-btn-add {
-        padding: 10px 12px;
-        font-size: 0.65rem;
-        background: var(--rosado);
-        color: var(--negro);
-        border: none;
-        margin-top: 5px;
-    }
-    .carrusel-info {
-        padding: 12px 15px;
-    }
-}
+/* Moviles movido al final */
 
 .hero .btn-group {
     animation: fadeInUp 1s cubic-bezier(0.25, 0.8, 0.25, 1) 1.8s both;
@@ -1104,35 +976,40 @@ header.scrolled .logo-img {
    RESPONSIVE
    ========================================= */
 @media (max-width: 768px) {
-    header { padding: 0 20px; }
+    header { padding: 0 15px; }
 
     .navbar {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         height: auto;
         min-height: auto;
-        padding: 16px 0;
-        gap: 12px;
+        padding: 12px 0;
     }
 
     header.scrolled .navbar {
         height: auto;
         min-height: auto;
+        padding: 10px 0;
+    }
+    
+    .logo-img { margin-right: 0; height: 35px; }
+
+    .user-actions {
+        margin-left: auto;
+        gap: 12px;
     }
 
     .menu {
-        flex-wrap: wrap;
+        width: 100%;
+        display: flex;
         justify-content: center;
-        gap: 0.8rem;
-    }
-
-    .menu li a { font-size: 0.68rem; letter-spacing: 1.5px; }
-    .menu li a i { display: none; }
-
-    .user-actions {
+        flex-wrap: wrap;
+        gap: 10px;
         margin-top: 8px;
-        flex-wrap: wrap;
-        justify-content: center;
     }
+
+    .menu li a { font-size: 0.65rem; letter-spacing: 1px; padding: 4px; }
+    .menu li a i { display: none; }
 
     .hero {
         min-height: 90vh;
@@ -1165,4 +1042,115 @@ header.scrolled .logo-img {
     .nosotros h2, .ofrecemos h2 { font-size: 1.8rem; }
     .item img { width: 100%; max-width: 300px; height: 380px; }
     .galeria { gap: 20px; }
+
+    /* Estilos recuperados y ajustados */
+    .carrusel-container { margin-top: 30px; }
+    .carrusel-item {
+        min-width: 280px;
+        flex: 0 0 280px;
+        scroll-snap-align: center;
+    }
+    .carrusel-card { width: 100%; }
+    .carrusel-img { height: 320px; }
+    .carrusel-nombre {
+        font-size: 0.85rem;
+        white-space: normal;
+        line-height: 1.4;
+    }
+    .carrusel { gap: 15px; padding: 0 10px; }
+    .carrusel-wrapper { gap: 8px; position: relative; }
+    .carrusel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 40px;
+        height: 40px;
+        background: rgba(232, 180, 184, 0.9);
+        color: var(--negro);
+        border: none;
+        border-radius: 50%;
+    }
+    .carrusel-prev { left: -10px; }
+    .carrusel-next { right: -10px; }
+    
+    .whatsapp-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    .carrusel-btn-add {
+        padding: 10px 12px;
+        font-size: 0.65rem;
+        background: var(--rosado);
+        color: var(--negro);
+        border: none;
+        margin-top: 5px;
+    }
+}
+
+/* =========================================
+   MOBILE NAVBAR TOGGLE (v5)
+   ========================================= */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--rosado, #E8B4B8);
+    font-size: 1.6rem;
+    cursor: pointer;
+    margin-left: 15px;
+    padding: 5px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block !important;
+    }
+    .navbar {
+        position: relative;
+        justify-content: space-between;
+    }
+    .user-actions {
+        margin-left: auto;
+    }
+    .menu {
+        display: none !important;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--negro, #1A1A1A);
+        padding: 0;
+        margin: 0 !important;
+        border-top: 1px solid rgba(232, 180, 184, 0.2);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+        z-index: 1000;
+        list-style: none !important;
+    }
+    .menu.active {
+        display: flex !important;
+    }
+    .menu li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .menu li a {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0 !important;
+        font-size: 0.85rem !important;
+        color: rgba(250, 240, 225, 0.9) !important;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+    }
+    .menu li a:hover {
+        color: var(--rosado, #E8B4B8) !important;
+        background: rgba(255,255,255,0.02);
+    }
 }

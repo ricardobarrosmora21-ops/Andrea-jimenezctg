@@ -25,3 +25,68 @@
     font-weight: 600;
     letter-spacing: 1px;
 }
+
+/* =========================================
+   MOBILE NAVBAR TOGGLE (v5)
+   ========================================= */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--rosado, #E8B4B8);
+    font-size: 1.6rem;
+    cursor: pointer;
+    margin-left: 15px;
+    padding: 5px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block !important;
+    }
+    .navbar {
+        position: relative;
+        justify-content: space-between;
+    }
+    .user-actions {
+        margin-left: auto;
+    }
+    .menu {
+        display: none !important;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--negro, #1A1A1A);
+        padding: 0;
+        margin: 0 !important;
+        border-top: 1px solid rgba(232, 180, 184, 0.2);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+        z-index: 1000;
+        list-style: none !important;
+    }
+    .menu.active {
+        display: flex !important;
+    }
+    .menu li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .menu li a {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0 !important;
+        font-size: 0.85rem !important;
+        color: rgba(250, 240, 225, 0.9) !important;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+    }
+    .menu li a:hover {
+        color: var(--rosado, #E8B4B8) !important;
+        background: rgba(255,255,255,0.02);
+    }
+}
