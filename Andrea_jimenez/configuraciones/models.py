@@ -126,6 +126,16 @@ class Prenda(models.Model):
         ]
 
     def save(self, *args, **kwargs):
+        # Auto-archivo por stock
+        if self.stock <= 0:
+            if not self.is_archived:
+                self.is_archived = True
+                self.archived_at = timezone.now()
+        else:
+            if self.is_archived:
+                self.is_archived = False
+                self.archived_at = None
+
         # 1. Asignar slug único automáticamente
         if not self.slug:
             base = slugify(self.nombre)[:110]
