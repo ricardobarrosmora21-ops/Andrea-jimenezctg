@@ -29,7 +29,7 @@
         </ul>
 
         <div class="user-actions">
-            <button class="menu-toggle" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+            <button type="button" class="menu-toggle" aria-label="Abrir menú" onclick="event.preventDefault(); document.querySelector('.menu').classList.toggle('active');"><i class="fa-solid fa-bars"></i></button>
             {% if user.is_authenticated and user.groups.first.name == "Cliente" %}
                 <div class="cart">
                     <a href="{% url 'carrito' %}" aria-label="Bolsa de compras"><i class="fa-solid fa-bag-shopping"></i></a>
@@ -142,7 +142,7 @@
         </div>
         <div class="footer-col">
             <h3>Contacto</h3>
-            <p><i class="fa-solid fa-phone"></i> +{{ whatsapp_number }}</p>
+            <p><i class="fa-solid fa-phone"></i> +57 301 4717412</p>
             <p><i class="fa-solid fa-envelope"></i> andreajimenezctg@gmail.com</p>
         </div>
     </div>
@@ -151,7 +151,7 @@
     </div>
 </footer>
 
-<a href="https://api.whatsapp.com/send?phone={{ whatsapp_number }}&text=Hola,%20necesito%20ayuda%20con%20mi%20pedido%20en%20Andrea%20Jiménez" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+<a href="https://api.whatsapp.com/send?phone=573014717412&text=Hola,%20necesito%20ayuda%20con%20mi%20pedido%20en%20Andrea%20Jiménez" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
 

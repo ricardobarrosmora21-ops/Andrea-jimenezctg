@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ubicación - Andrea Jiménez</title>
     <link rel="icon" href="{% static 'img/favicon-round.png' %}" type="image/png">
-    <link rel="stylesheet" href="{% static 'css/distribuidores.css' %}">
+    <link rel="stylesheet" href="{% static 'css/distribuidores.css?v=3' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
         </ul>
 
         <div class="user-actions">
-            <button class="menu-toggle" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+            <button type="button" class="menu-toggle" aria-label="Abrir menú" onclick="event.preventDefault(); document.querySelector('.menu').classList.toggle('active');"><i class="fa-solid fa-bars"></i></button>
             {% if user.is_authenticated and user.groups.first.name == "Cliente" %}
                 <div class="cart">
                     <a href="{% url 'carrito' %}" aria-label="Bolsa de compras"><i class="fa-solid fa-bag-shopping"></i></a>
@@ -58,7 +58,7 @@
         <h3>Cartagena - Barrio Villa Estrella</h3>
         <p>Cartagena de Indias, Barrio Villa Estrella</p>
         <p>Bolívar, Colombia</p>
-        <p>Tel: +{{ whatsapp_number }}</p>
+        <p>Tel: +57 301 4717412</p>
     </div>
 
     <div class="mapa-tiendas">
@@ -116,13 +116,13 @@
     </div>
 
     <footer>
-        <p>+{{ whatsapp_number }}</p>
+        <p>+57 301 4717412</p>
         <p>andreajimenezctg@gmail.com</p>
         <p>© 2025 Andrea Jiménez</p>
     </footer>
 </div>
 
-<a href="https://api.whatsapp.com/send?phone={{ whatsapp_number }}&text=Hola,%20necesito%20ayuda%20con%20mi%20pedido%20en%20Andrea%20Jiménez" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+<a href="https://api.whatsapp.com/send?phone=573014717412&text=Hola,%20necesito%20ayuda%20con%20mi%20pedido%20en%20Andrea%20Jiménez" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
 

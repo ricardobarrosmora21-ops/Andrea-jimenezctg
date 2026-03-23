@@ -8,7 +8,7 @@
     <title>Atención al Cliente - Andrea Jiménez</title>
     <link rel="icon" href="{% static 'img/favicon-round.png' %}" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="{% static 'css/atencion.css' %}">
+    <link rel="stylesheet" href="{% static 'css/atencion.css?v=3' %}">
     
 </head>
 
@@ -30,7 +30,7 @@
             </ul>
 
             <div class="user-actions">
-            <button class="menu-toggle" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+            <button type="button" class="menu-toggle" aria-label="Abrir menú" onclick="event.preventDefault(); document.querySelector('.menu').classList.toggle('active');"><i class="fa-solid fa-bars"></i></button>
                 {% if user.is_authenticated and user.groups.first.name == "Cliente" %}
                     <div class="cart">
                         <a href="{% url 'carrito' %}" aria-label="Bolsa de compras"><i class="fa-solid fa-bag-shopping"></i></a>
@@ -80,7 +80,7 @@
         <!-- Información de contacto -->
         <div class="contact-info">
             <strong>Llámanos al:</strong><br />
-            +{{ whatsapp_number }}<br />
+            +57 301 4717412<br />
             o envíanos un email:<br />
             andreajimenezctg@gmail.com
         </div>
@@ -129,12 +129,12 @@
             <button type="button" class="btn">Enviar</button>
         </div>
 
-        <p>+{{ whatsapp_number }}</p>
+        <p>+57 301 4717412</p>
         <p>andreajimenezctg@gmail.com</p>
         <p>© 2025 Andrea Jiménez</p>
     </div>
 
-    <a href="https://api.whatsapp.com/send?phone={{ whatsapp_number }}&text=Hola,%20necesito%20ayuda%20con%20mi%20pedido%20en%20Andrea%20Jiménez" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+    <a href="https://api.whatsapp.com/send?phone=573014717412&text=Hola,%20necesito%20ayuda%20con%20mi%20pedido%20en%20Andrea%20Jiménez" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
