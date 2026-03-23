@@ -935,9 +935,7 @@ header.scrolled .logo-img {
     header {
         padding: 0 20px;
     }
-    .menu {
-        display: none; /* Podríamos implementar un menú hamburguesa, pero por ahora simplificamos */
-    }
+    /* El menu se adapta con flex-wrap más abajo */
     .hero .frase p {
         font-size: 2.2rem;
         line-height: 1.1;
@@ -1104,35 +1102,40 @@ header.scrolled .logo-img {
    RESPONSIVE
    ========================================= */
 @media (max-width: 768px) {
-    header { padding: 0 20px; }
+    header { padding: 0 15px; }
 
     .navbar {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         height: auto;
         min-height: auto;
-        padding: 16px 0;
-        gap: 12px;
+        padding: 12px 0;
     }
 
     header.scrolled .navbar {
         height: auto;
         min-height: auto;
+        padding: 10px 0;
+    }
+    
+    .logo-img { margin-right: 0; height: 35px; }
+
+    .user-actions {
+        margin-left: auto;
+        gap: 12px;
     }
 
     .menu {
-        flex-wrap: wrap;
+        width: 100%;
+        display: flex;
         justify-content: center;
-        gap: 0.8rem;
-    }
-
-    .menu li a { font-size: 0.68rem; letter-spacing: 1.5px; }
-    .menu li a i { display: none; }
-
-    .user-actions {
+        flex-wrap: wrap;
+        gap: 10px;
         margin-top: 8px;
-        flex-wrap: wrap;
-        justify-content: center;
     }
+
+    .menu li a { font-size: 0.65rem; letter-spacing: 1px; padding: 4px; }
+    .menu li a i { display: none; }
 
     .hero {
         min-height: 90vh;
