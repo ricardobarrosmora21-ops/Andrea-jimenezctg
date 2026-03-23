@@ -24,34 +24,34 @@
 
     <!-- Stats Summary -->
     <div class="mini-stats">
-        <div class="mini-stat">
+        <a href="{% url 'gestion_productos' %}" class="mini-stat" style="text-decoration: none; color: inherit; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
             <i class="fas fa-box"></i>
             <div class="mini-stat-content">
                 <span class="mini-stat-value">{{ total_productos|default:"0" }}</span>
                 <span class="mini-stat-label">Total Productos</span>
             </div>
-        </div>
-        <div class="mini-stat">
+        </a>
+        <a href="?stock=disponible" class="mini-stat" style="text-decoration: none; color: inherit; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
             <i class="fas fa-check-circle"></i>
             <div class="mini-stat-content">
                 <span class="mini-stat-value">{{ activos|default:"0" }}</span>
                 <span class="mini-stat-label">Activos</span>
             </div>
-        </div>
-        <div class="mini-stat">
+        </a>
+        <a href="?stock=bajo" class="mini-stat" style="text-decoration: none; color: inherit; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
             <i class="fas fa-exclamation-triangle"></i>
             <div class="mini-stat-content">
                 <span class="mini-stat-value">{{ bajo_stock|default:"0" }}</span>
                 <span class="mini-stat-label">Bajo Stock</span>
             </div>
-        </div>
-        <div class="mini-stat">
+        </a>
+        <a href="?oferta=si" class="mini-stat" style="text-decoration: none; color: inherit; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">
             <i class="fas fa-tag"></i>
             <div class="mini-stat-content">
                 <span class="mini-stat-value">{{ en_oferta|default:"0" }}</span>
                 <span class="mini-stat-label">En Oferta</span>
             </div>
-        </div>
+        </a>
     </div>
 
     <!-- Main Card -->

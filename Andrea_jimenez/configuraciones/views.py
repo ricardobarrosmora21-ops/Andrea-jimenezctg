@@ -746,6 +746,7 @@ def gestion_productos(request):
     search_query = request.GET.get('search', '')
     category_id = request.GET.get('categoria', '')
     stock_status = request.GET.get('stock', '')
+    oferta_status = request.GET.get('oferta', '')
     sort_by = request.GET.get('sort', '-id')
     order = request.GET.get('order', 'desc')
     
@@ -792,6 +793,10 @@ def gestion_productos(request):
         productos_qs = productos_qs.filter(stock__lte=5, stock__gt=0, is_archived=False)
     elif stock_status == 'agotado':
         productos_qs = productos_qs.filter(stock=0)
+
+    # Aplicar filtro de oferta
+    if oferta_status == 'si':
+        productos_qs = productos_qs.filter(precio_descuento__isnull=False)
 
     # 2. Estadísticas para los mini-contadores (siempre sobre el total)
     total_productos = Prenda.objects.count()
