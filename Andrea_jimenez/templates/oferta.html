@@ -43,7 +43,7 @@
 
             {% if user.is_authenticated %}
                 <div class="dropdown">
-                    <button class="dropdown-btn">
+                    <button type="button" class="dropdown-btn" onclick="event.preventDefault(); this.parentElement.classList.toggle('active');">
                         <i class="fa-regular fa-user"></i> 
                         {% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}
                         <i class="fa-solid fa-chevron-down" style="font-size: 0.5rem; margin-left: 5px;"></i>

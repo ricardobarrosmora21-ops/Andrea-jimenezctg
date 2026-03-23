@@ -7,7 +7,7 @@
     <title>Andrea Jiménez | Inicio</title>
     <link rel="icon" href="{% static 'img/favicon-round.png' %}" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="{% static 'css/home.css' %}?v=5">
+    <link rel="stylesheet" href="{% static \'css/home.css\' %}?v=6">
 <!-- Video removido porque no está subido a Github -->
 <header>
     <nav class="navbar">
@@ -35,7 +35,7 @@
 
             {% if user.is_authenticated %}
                 <div class="dropdown">
-                    <button class="dropdown-btn">
+                    <button type="button" class="dropdown-btn" onclick="event.preventDefault(); this.parentElement.classList.toggle('active');">
                         <i class="fa-regular fa-user"></i> 
                         {% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}
                         <i class="fa-solid fa-chevron-down" style="font-size: 0.5rem; margin-left: 5px;"></i>
