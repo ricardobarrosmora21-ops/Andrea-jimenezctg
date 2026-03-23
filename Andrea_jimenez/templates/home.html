@@ -29,6 +29,7 @@
         </ul>
 
         <div class="user-actions">
+            <button class="menu-toggle" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
             {% if user.is_authenticated and user.groups.first.name == "Cliente" %}
                 <div class="cart">
                     <a href="{% url 'carrito' %}" aria-label="Bolsa de compras"><i class="fa-solid fa-bag-shopping"></i></a>
@@ -204,6 +205,18 @@ var observer = new IntersectionObserver(function(entries) {
 
 document.querySelectorAll('.fade-in-section').forEach(function(el) {
     observer.observe(el);
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var toggleBtn = document.querySelector('.menu-toggle');
+    var menu = document.querySelector('.menu');
+    if(toggleBtn && menu) {
+        toggleBtn.addEventListener('click', function() {
+            menu.classList.toggle('active');
+        });
+    }
 });
 </script>
 </body>

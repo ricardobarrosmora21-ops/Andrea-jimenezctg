@@ -37,6 +37,18 @@
         <p>© 2025 Andrea Jiménez</p>
     </footer>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var toggleBtn = document.querySelector('.menu-toggle');
+    var menu = document.querySelector('.menu');
+    if(toggleBtn && menu) {
+        toggleBtn.addEventListener('click', function() {
+            menu.classList.toggle('active');
+        });
+    }
+});
+</script>
 </body>
 
 </html>

@@ -528,3 +528,50 @@ footer p {
 
     .producto-item { width: 100%; max-width: 280px; }
 }
+
+/* =========================================
+   MOBILE NAVBAR TOGGLE
+   ========================================= */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--rosado, #E8B4B8);
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .navbar {
+        position: relative;
+    }
+    .menu {
+        display: none !important;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--negro, #1A1A1A);
+        padding: 20px 0;
+        border-top: 1px solid rgba(232, 180, 184, 0.2);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        z-index: 1000;
+        margin-top: 0 !important;
+    }
+    .menu.active {
+        display: flex !important;
+    }
+    .menu li {
+        width: 100%;
+        justify-content: center;
+    }
+    .menu li a {
+        font-size: 0.8rem !important;
+        padding: 12px 0 !important;
+    }
+}
