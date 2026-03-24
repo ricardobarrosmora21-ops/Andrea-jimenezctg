@@ -492,7 +492,7 @@ footer a:hover {
 
 
 /* =========================================
-   MOBILE NAVBAR BULLETPROOF (v7)
+   MOBILE NAVBAR SIDEBAR FIX (v8)
    ========================================= */
 .menu-toggle {
     display: none;
@@ -522,57 +522,70 @@ footer a:hover {
     .user-actions {
         margin-left: auto;
     }
+    
     .menu {
         display: flex !important;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: var(--negro, #1A1A1A);
-        padding: 0;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: -320px !important;
+        width: 280px !important;
+        height: 100vh !important;
+        background: var(--negro, #1A1A1A) !important;
+        z-index: 1050 !important;
         margin: 0 !important;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.7);
-        z-index: 1000;
-        list-style: none !important;
-        
-        /* The Magic Bulletproof Hack */
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease-in-out, border-top 0.4s ease-in-out;
-        border-top: 0px solid transparent;
+        padding: 80px 0 0 0 !important;
+        box-shadow: 2px 0 20px rgba(0,0,0,0.8) !important;
+        transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+        overflow-y: auto !important;
+        border-top: none !important;
+        max-height: 100vh !important;
     }
     .menu.active {
-        max-height: 500px; /* Big enough to fit all links */
-        border-top: 1px solid rgba(232, 180, 184, 0.2);
+        left: 0 !important;
     }
     .menu li {
-        width: 100%;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
+        width: 100% !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+        position: relative !important;
+        display: flex !important;
     }
     .menu li a {
-        display: block !important;
-        width: 100%;
-        text-align: center;
-        padding: 15px 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        width: 100% !important;
+        text-align: left !important;
+        padding: 18px 25px !important;
         font-size: 0.85rem !important;
         color: rgba(250, 240, 225, 0.9) !important;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        font-family: 'Montserrat', sans-serif;
-        text-decoration: none;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        font-family: 'Montserrat', sans-serif !important;
+        text-decoration: none !important;
+        gap: 15px !important;
+    }
+    .menu li a i {
+        display: inline-block !important;
+        font-size: 1.1rem !important;
+        color: var(--rosado, #E8B4B8) !important;
+        width: 20px !important;
+        text-align: center !important;
+    }
+    .menu li a::after {
+        display: none !important;
     }
     .menu li a:hover {
         color: var(--rosado, #E8B4B8) !important;
-        background: rgba(255,255,255,0.02);
+        background: rgba(255,255,255,0.05) !important;
     }
 }
 
-
 /* =========================================
-   DROPDOWN MOBILE FIX (v7)
+   DROPDOWN MOBILE FIX (v8)
    ========================================= */
 .dropdown.active .dropdown-content {
     display: block !important;
     animation: dropdownFade 0.3s ease;
 }
+
