@@ -490,18 +490,25 @@ footer a:hover {
     h1 { font-size: 2rem; }
 }
 
+
 /* =========================================
-   MOBILE NAVBAR TOGGLE (v5)
+   MOBILE NAVBAR BULLETPROOF (v7)
    ========================================= */
 .menu-toggle {
     display: none;
     background: transparent;
-    border: none;
-    color: var(--rosado, #E8B4B8);
-    font-size: 1.6rem;
+    border: 1px solid var(--rosado, #E8B4B8);
+    border-radius: 4px;
+    color: var(--crema, #FAF0E1);
+    font-size: 1.4rem;
     cursor: pointer;
     margin-left: 15px;
-    padding: 5px;
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+}
+.menu-toggle:hover {
+    background: var(--rosado, #E8B4B8);
+    color: var(--negro, #1A1A1A);
 }
 
 @media (max-width: 768px) {
@@ -516,7 +523,7 @@ footer a:hover {
         margin-left: auto;
     }
     .menu {
-        display: none !important;
+        display: flex !important;
         flex-direction: column;
         width: 100%;
         position: absolute;
@@ -525,13 +532,19 @@ footer a:hover {
         background: var(--negro, #1A1A1A);
         padding: 0;
         margin: 0 !important;
-        border-top: 1px solid rgba(232, 180, 184, 0.2);
         box-shadow: 0 15px 30px rgba(0,0,0,0.7);
         z-index: 1000;
         list-style: none !important;
+        
+        /* The Magic Bulletproof Hack */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out, border-top 0.4s ease-in-out;
+        border-top: 0px solid transparent;
     }
     .menu.active {
-        display: flex !important;
+        max-height: 500px; /* Big enough to fit all links */
+        border-top: 1px solid rgba(232, 180, 184, 0.2);
     }
     .menu li {
         width: 100%;
@@ -557,7 +570,7 @@ footer a:hover {
 
 
 /* =========================================
-   DROPDOWN MOBILE FIX (v6)
+   DROPDOWN MOBILE FIX (v7)
    ========================================= */
 .dropdown.active .dropdown-content {
     display: block !important;
