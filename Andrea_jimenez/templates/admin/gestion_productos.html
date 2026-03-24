@@ -73,17 +73,17 @@
                     <select class="filter-select" id="categoryFilter">
                         <option value="">Todas las categorias</option>
                         {% for categoria in categorias %}
-                        <option value="{{ categoria.id }}" {% if selected_category==categoria.id %}selected{% endif %}>
+                        <option value="{{ categoria.id }}" {% if selected_category == categoria.id %}selected{% endif %}>
                             {{ categoria.nombre }}
                         </option>
                         {% endfor %}
                     </select>
                     <select class="filter-select" id="stockFilter">
                         <option value="">Todo el stock</option>
-                        <option value="disponible" {% if selected_stock=='disponible' %}selected{% endif %}>En stock
+                        <option value="disponible" {% if selected_stock == 'disponible' %}selected{% endif %}>En stock
                         </option>
-                        <option value="bajo" {% if selected_stock=='bajo' %}selected{% endif %}>Bajo stock</option>
-                        <option value="agotado" {% if selected_stock=='agotado' %}selected{% endif %}>Agotado</option>
+                        <option value="bajo" {% if selected_stock == 'bajo' %}selected{% endif %}>Bajo stock</option>
+                        <option value="agotado" {% if selected_stock == 'agotado' %}selected{% endif %}>Agotado</option>
                     </select>
                 </div>
             </div>
@@ -146,8 +146,7 @@
                                     <div class="product-info">
                                         <span class="product-name">{{ producto.nombre }}</span>
                                         <div class="barcode-container">
-                                            <span class="product-sku">{{ producto.codigo_barras|default:"AJ-XXXXXX"
-                                                }}</span>
+                                            <span class="product-sku">{{ producto.codigo_barras|default:"AJ-XXXXXX" }}</span>
                                             {% if producto.barcode_image %}
                                             <img src="{{ producto.barcode_image.url }}" alt="Barcode"
                                                 class="barcode-preview-img">
@@ -157,8 +156,7 @@
                                 </div>
                             </td>
                             <td>
-                                <span class="category-badge">{{ producto.categoria.nombre|default:"Sin categoria"
-                                    }}</span>
+                                <span class="category-badge">{{ producto.categoria.nombre|default:"Sin categoria" }}</span>
                             </td>
                             <td>
                                 <div class="price-cell">
@@ -245,8 +243,7 @@
                         {% endif %}
                     </div>
                     <div class="product-card-body">
-                        <span class="product-card-category">{{ producto.categoria.nombre|default:"Sin categoria"
-                            }}</span>
+                        <span class="product-card-category">{{ producto.categoria.nombre|default:"Sin categoria" }}</span>
                         <h4 class="product-card-name">{{ producto.nombre }}</h4>
                         <div class="product-card-price">
                             {% if producto.precio_descuento %}
@@ -280,9 +277,8 @@
         {% if productos %}
         <div class="pagination-wrapper">
             <div class="pagination-info">
-                Mostrando <strong>{{ page_obj.start_index|default:"1" }}</strong> - <strong>{{
-                    page_obj.end_index|default:productos|length }}</strong>
-                de <strong>{{ total_productos|default:productos|length }}</strong> productos
+                Mostrando <strong>{{ page_obj.start_index|default:"1" }}</strong> - <strong>{{ page_obj.end_index|default:0 }}</strong>
+                de <strong>{{ total_productos|default:0 }}</strong> productos
             </div>
             <div class="pagination">
                 {% if page_obj.has_previous %}
