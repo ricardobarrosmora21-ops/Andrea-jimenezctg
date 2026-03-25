@@ -1175,3 +1175,7 @@ INFO 2026-03-25 17:34:55,569 basehttp "GET /panel_admin/ HTTP/1.1" 200 27142
 INFO 2026-03-25 17:36:46,605 basehttp "GET /panel_admin/ HTTP/1.1" 200 27142
 INFO 2026-03-25 17:38:53,221 basehttp "GET /panel_admin/?v=1.3 HTTP/1.1" 200 27148
 INFO 2026-03-25 17:38:53,345 basehttp "GET /static/css/admin/admin_global.css?v=1.3 HTTP/1.1" 200 32931
+INFO 2026-03-25 17:50:18,335 basehttp "GET /panel_admin/ HTTP/1.1" 200 23466
+INFO 2026-03-25 17:50:18,547 basehttp "GET /static/css/admin/admin_global.css?v=1.3 HTTP/1.1" 200 30804
+WARNING 2026-03-25 17:50:18,946 log Not Found: /favicon.ico
+WARNING 2026-03-25 17:50:18,947 basehttp "GET /favicon.ico HTTP/1.1" 404 11175
