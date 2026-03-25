@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Panel de Administración{% endblock %} | Andrea Jiménez</title>
-    <link rel="stylesheet" href="{% static 'css/admin/admin_global.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin/admin_global.css' %}?v=1.3">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     {% block extra_css %}{% endblock %}
@@ -96,6 +96,67 @@
                         <span class="breadcrumb-item active">{% block breadcrumb %}Dashboard{% endblock %}</span>
                     </div>
                 </div>
+
+                <!-- Mobile Navigation Dropdown -->
+                <div class="admin-mobile-dropdown" id="adminMobileDropdown">
+                    <div class="admin-mobile-user">
+                        <div class="user-avatar-sm">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info-sm">
+                            <span class="user-name-sm">{{ user.username|default:"Admin" }}</span>
+                            <span class="user-role-sm">Administrador</span>
+                        </div>
+                    </div>
+                    <nav class="mobile-nav">
+                        <ul class="mobile-nav-list">
+                            <li class="mobile-nav-item {% if request.resolver_match.url_name == 'panel_admin' %}active{% endif %}">
+                                <a href="{% url 'panel_admin' %}" class="mobile-nav-link">
+                                    <i class="fas fa-home"></i>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="mobile-nav-item {% if 'producto' in request.resolver_match.url_name %}active{% endif %}">
+                                <a href="{% url 'gestion_productos' %}" class="mobile-nav-link">
+                                    <i class="fas fa-tshirt"></i>
+                                    <span>Productos</span>
+                                </a>
+                            </li>
+                            <li class="mobile-nav-item {% if 'categoria' in request.resolver_match.url_name %}active{% endif %}">
+                                <a href="{% url 'gestion_categorias' %}" class="mobile-nav-link">
+                                    <i class="fas fa-tags"></i>
+                                    <span>Categorías</span>
+                                </a>
+                            </li>
+                            <li class="mobile-nav-item {% if 'cliente' in request.resolver_match.url_name %}active{% endif %}">
+                                <a href="{% url 'gestion_clientes' %}" class="mobile-nav-link">
+                                    <i class="fas fa-users"></i>
+                                    <span>Clientes</span>
+                                </a>
+                            </li>
+                            <li class="mobile-nav-item {% if 'venta' in request.resolver_match.url_name %}active{% endif %}">
+                                <a href="{% url 'gestion_ventas' %}" class="mobile-nav-link">
+                                    <i class="fas fa-shopping-bag"></i>
+                                    <span>Ventas</span>
+                                </a>
+                            </li>
+                            <li class="mobile-nav-item {% if 'escanear' in request.resolver_match.url_name %}active{% endif %}">
+                                <a href="{% url 'escanear_venta' %}" class="mobile-nav-link">
+                                    <i class="fas fa-barcode"></i>
+                                    <span>Escanear Venta</span>
+                                </a>
+                            </li>
+                            <li class="mobile-nav-divider"></li>
+                            <li class="mobile-nav-item">
+                                <a href="{% url 'logout' %}" class="mobile-nav-link logout">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Cerrar Sesión</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
                 <div class="header-right">
                     <div class="header-date">
                         <i class="far fa-calendar-alt"></i>
@@ -143,16 +204,24 @@
         });
 
         // Mobile Toggle
+        const adminMobileDropdown = document.getElementById('adminMobileDropdown');
+        
         mobileToggle?.addEventListener('click', (e) => {
             e.stopPropagation();
-            sidebar.classList.toggle('mobile-open');
+            adminMobileDropdown.classList.toggle('active');
+            mobileToggle.querySelector('i').classList.toggle('fa-bars');
+            mobileToggle.querySelector('i').classList.toggle('fa-times');
         });
 
-        // Close sidebar when clicking outside on mobile
+        // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
             if (window.innerWidth <= 1024) {
-                if (!sidebar.contains(e.target) && !mobileToggle.contains(e.target) && sidebar.classList.contains('mobile-open')) {
-                    sidebar.classList.remove('mobile-open');
+                if (adminMobileDropdown.classList.contains('active') && 
+                    !adminMobileDropdown.contains(e.target) && 
+                    !mobileToggle.contains(e.target)) {
+                    adminMobileDropdown.classList.remove('active');
+                    mobileToggle.querySelector('i').classList.add('fa-bars');
+                    mobileToggle.querySelector('i').classList.remove('fa-times');
                 }
             }
         });
