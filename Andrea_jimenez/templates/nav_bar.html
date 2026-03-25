@@ -1,0 +1,96 @@
+{% load static %}
+<style>
+    @media (max-width: 768px) {
+        .menu {
+            display: none !important;
+            flex-direction: column !important;
+            position: fixed !important;
+            top: 0 !important;
+            left: -320px !important;
+            width: 280px !important;
+            height: 100vh !important;
+            background: #1A1A1A !important;
+            z-index: 2000 !important;
+            padding: 80px 0 0 0 !important;
+            margin: 0 !important;
+            transition: left 0.4s ease !important;
+            box-shadow: 2px 0 20px rgba(0,0,0,0.8) !important;
+            overflow-y: auto !important;
+        }
+        .menu.active {
+            display: flex !important;
+            left: 0 !important;
+        }
+        .menu li {
+            width: 100% !important;
+            display: flex !important;
+            min-height: 50px !important;
+            border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+        }
+        .menu li a {
+            display: flex !important;
+            align-items: center !important;
+            width: 100% !important;
+            padding: 15px 25px !important;
+            color: #FAF0E1 !important;
+            text-decoration: none !important;
+            font-size: 0.9rem !important;
+            gap: 15px !important;
+            visibility: visible !important;
+        }
+        .menu li a i {
+            display: inline-block !important;
+            color: #E8B4B8 !important;
+            width: 20px !important;
+        }
+        .menu-toggle {
+            display: block !important;
+        }
+    }
+</style>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'img/logo.png' %}" alt="Andrea Jiménez" class="logo-img">
+            </a>
+        </div>
+
+        <ul class="menu">
+            <li><a href="{% url 'home' %}" {% if request.resolver_match.url_name == 'home' %}class="active"{% endif %}><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a href="{% url 'tienda' %}" {% if request.resolver_match.url_name == 'tienda' %}class="active"{% endif %}><i class="fa-solid fa-store"></i> Tienda</a></li>
+            <li><a href="{% url 'oferta' %}" {% if request.resolver_match.url_name == 'oferta' %}class="active"{% endif %}><i class="fa-solid fa-tags"></i> Oferta</a></li>
+            <li><a href="{% url 'atencion' %}" {% if request.resolver_match.url_name == 'atencion' %}class="active"{% endif %}><i class="fa-solid fa-headset"></i> Atención al cliente</a></li>
+            <li><a href="{% url 'distribuidores' %}" {% if request.resolver_match.url_name == 'distribuidores' %}class="active"{% endif %}><i class="fa-solid fa-location-dot"></i> Ubicación</a></li>
+        </ul>
+
+        <div class="user-actions">
+            <button type="button" class="menu-toggle" aria-label="Abrir menú"><i class="fa-solid fa-bars" style="pointer-events: none;"></i></button>
+            {% if user.is_authenticated and es_cliente %}
+                <div class="cart">
+                    <a href="{% url 'carrito' %}" aria-label="Bolsa de compras"><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+            {% endif %}
+
+            {% if user.is_authenticated %}
+                <div class="dropdown">
+                    <button type="button" class="dropdown-btn" onclick="event.preventDefault(); this.parentElement.classList.toggle('active');">
+                        <i class="fa-regular fa-user"></i> 
+                        {% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}
+                        <i class="fa-solid fa-chevron-down" style="font-size: 0.5rem; margin-left: 5px;"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        {% if es_admin %}
+                        <a href="{% url 'panel_admin' %}" style="color: #00d2ff;"><i class="fas fa-lock"></i> Panel Admin</a>
+                        {% endif %}
+                        <a href="{% url 'panel_cliente' %}"><i class="fa-regular fa-user"></i> Mi Perfil</a>
+                        <a href="{% url 'carrito' %}"><i class="fa-solid fa-bag-shopping"></i> Carrito</a>
+                        <a href="{% url 'mis_ventas' %}"><i class="fa-solid fa-clock-rotate-left"></i> Mis Compras</a>
+                        <div style="border-top: 1px solid rgba(255,255,255,0.1); margin: 5px 0;"></div>
+                        <a href="{% url 'logout' %}" style="color: #ff7a9c;"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar Sesión</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+</header>
