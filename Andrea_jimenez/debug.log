@@ -1131,3 +1131,47 @@ INFO 2026-03-25 17:06:35,516 basehttp "GET /tienda/ HTTP/1.1" 200 13724
 INFO 2026-03-25 17:06:39,782 basehttp "GET / HTTP/1.1" 200 10984
 INFO 2026-03-25 17:06:58,740 basehttp "GET / HTTP/1.1" 200 10984
 INFO 2026-03-25 17:09:50,956 basehttp "GET / HTTP/1.1" 200 12236
+INFO 2026-03-25 17:23:30,247 basehttp "GET /login/ HTTP/1.1" 200 1993
+INFO 2026-03-25 17:23:30,334 basehttp "GET /static/css/login.css HTTP/1.1" 200 7936
+INFO 2026-03-25 17:23:30,335 basehttp "GET /static/img/logo.jpg HTTP/1.1" 200 27130
+INFO 2026-03-25 17:23:56,829 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-03-25 17:23:56,848 basehttp "GET /login/ HTTP/1.1" 200 2187
+WARNING 2026-03-25 17:24:01,312 log Not Found: /admin-panel/
+WARNING 2026-03-25 17:24:01,313 basehttp "GET /admin-panel/ HTTP/1.1" 404 11178
+WARNING 2026-03-25 17:24:01,420 log Not Found: /favicon.ico
+WARNING 2026-03-25 17:24:01,421 basehttp "GET /favicon.ico HTTP/1.1" 404 11175
+INFO 2026-03-25 17:24:10,231 basehttp "GET /panel_admin/ HTTP/1.1" 302 0
+INFO 2026-03-25 17:24:10,239 basehttp "GET /login/?next=/panel_admin/ HTTP/1.1" 200 1993
+INFO 2026-03-25 17:24:25,875 basehttp "POST /login/?next=/panel_admin/ HTTP/1.1" 302 0
+INFO 2026-03-25 17:24:25,884 basehttp "GET /login/ HTTP/1.1" 200 2187
+INFO 2026-03-25 17:24:30,485 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-03-25 17:24:30,511 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4241
+INFO 2026-03-25 17:24:41,479 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4449
+INFO 2026-03-25 17:24:47,236 basehttp "GET /login/ HTTP/1.1" 200 1993
+INFO 2026-03-25 17:24:57,987 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-03-25 17:24:58,001 basehttp "GET /login/ HTTP/1.1" 200 2187
+INFO 2026-03-25 17:25:08,375 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-03-25 17:25:08,386 basehttp "GET /login/ HTTP/1.1" 200 2187
+INFO 2026-03-25 17:25:20,025 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-03-25 17:25:20,034 basehttp "GET /login/ HTTP/1.1" 200 2187
+INFO 2026-03-25 17:25:29,162 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-03-25 17:25:29,174 basehttp "GET /login/ HTTP/1.1" 200 2187
+INFO 2026-03-25 17:25:43,277 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-03-25 17:25:43,297 basehttp "GET /login/ HTTP/1.1" 200 2187
+INFO 2026-03-25 17:26:42,125 basehttp "GET /login/ HTTP/1.1" 200 1993
+INFO 2026-03-25 17:27:56,923 basehttp "GET /login/ HTTP/1.1" 200 1993
+INFO 2026-03-25 17:28:33,741 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-03-25 17:28:33,764 basehttp "GET /login/ HTTP/1.1" 200 2187
+INFO 2026-03-25 17:29:27,263 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-03-25 17:29:27,803 basehttp "GET /panel_admin/ HTTP/1.1" 200 23458
+INFO 2026-03-25 17:29:27,936 basehttp "GET /static/css/admin/panel_admin.css HTTP/1.1" 200 6973
+INFO 2026-03-25 17:29:27,945 basehttp "GET /static/css/admin/admin_global.css HTTP/1.1" 200 30403
+WARNING 2026-03-25 17:29:29,226 log Not Found: /favicon.ico
+WARNING 2026-03-25 17:29:29,228 basehttp "GET /favicon.ico HTTP/1.1" 404 11175
+INFO 2026-03-25 17:31:22,353 basehttp "GET /login/ HTTP/1.1" 200 1993
+INFO 2026-03-25 17:31:34,662 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-03-25 17:31:34,942 basehttp "GET /panel_admin/ HTTP/1.1" 200 23458
+INFO 2026-03-25 17:34:55,569 basehttp "GET /panel_admin/ HTTP/1.1" 200 27142
+INFO 2026-03-25 17:36:46,605 basehttp "GET /panel_admin/ HTTP/1.1" 200 27142
+INFO 2026-03-25 17:38:53,221 basehttp "GET /panel_admin/?v=1.3 HTTP/1.1" 200 27148
+INFO 2026-03-25 17:38:53,345 basehttp "GET /static/css/admin/admin_global.css?v=1.3 HTTP/1.1" 200 32931
