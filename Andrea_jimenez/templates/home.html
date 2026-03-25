@@ -116,14 +116,22 @@
     var prev = document.querySelector('.carrusel-prev');
     var next = document.querySelector('.carrusel-next');
     if (!carrusel || !prev || !next) return;
-    var ancho = 230; // Coincide con CSS
-    var gap = 20;
-    var paso = 3; // Ahora salta de 3 en 3
+
+    var getScrollAmount = function() {
+        var firstItem = carrusel.querySelector('.carrusel-item');
+        if (!firstItem) return 250;
+        var style = window.getComputedStyle(carrusel);
+        var gapValue = parseInt(style.gap) || 20;
+        return firstItem.offsetWidth + gapValue;
+    };
+
+    var paso = 1; // Ahora se desplaza una por una
+
     prev.addEventListener('click', function() {
-        carrusel.scrollBy({ left: -(ancho + gap) * paso, behavior: 'smooth' });
+        carrusel.scrollBy({ left: -getScrollAmount() * paso, behavior: 'smooth' });
     });
     next.addEventListener('click', function() {
-        carrusel.scrollBy({ left: (ancho + gap) * paso, behavior: 'smooth' });
+        carrusel.scrollBy({ left: getScrollAmount() * paso, behavior: 'smooth' });
     });
 })();
 
