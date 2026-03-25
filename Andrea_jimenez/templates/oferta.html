@@ -151,16 +151,6 @@ var observer = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.fade-in-section').forEach(function(el) { observer.observe(el); });
 </script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var toggleBtn = document.querySelector('.menu-toggle');
-    var menu = document.querySelector('.menu');
-    if(toggleBtn && menu) {
-        toggleBtn.addEventListener('click', function() {
-            menu.classList.toggle('active');
-        });
-    }
-});
-</script>
+
 </body>
 </html>

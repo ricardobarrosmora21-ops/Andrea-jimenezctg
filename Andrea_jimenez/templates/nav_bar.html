@@ -1,55 +1,77 @@
 {% load static %}
 <style>
     @media (max-width: 768px) {
-        .menu {
+        #main-nav .menu {
             display: none !important;
             flex-direction: column !important;
-            position: fixed !important;
-            top: 0 !important;
-            left: -320px !important;
-            width: 280px !important;
-            height: 100vh !important;
+            position: absolute !important;
+            top: 100% !important;
+            right: 0 !important;
+            left: auto !important;
+            width: 260px !important;
+            height: auto !important;
             background: #1A1A1A !important;
             z-index: 2000 !important;
-            padding: 80px 0 0 0 !important;
+            padding: 10px 0 !important;
             margin: 0 !important;
-            transition: left 0.4s ease !important;
-            box-shadow: 2px 0 20px rgba(0,0,0,0.8) !important;
-            overflow-y: auto !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+            border: 1px solid rgba(232, 180, 184, 0.2) !important;
+            border-top: 2px solid #E8B4B8 !important;
+            overflow-y: visible !important;
         }
-        .menu.active {
+        #main-nav .menu.active {
             display: flex !important;
-            left: 0 !important;
+            animation: menuFade 0.3s ease !important;
         }
-        .menu li {
+        @keyframes menuFade {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        #main-nav .menu li {
             width: 100% !important;
             display: flex !important;
-            min-height: 50px !important;
+            min-height: auto !important;
             border-bottom: 1px solid rgba(255,255,255,0.05) !important;
         }
-        .menu li a {
+        #main-nav .menu li a {
             display: flex !important;
             align-items: center !important;
             width: 100% !important;
-            padding: 15px 25px !important;
-            color: #FAF0E1 !important;
+            padding: 12px 25px !important;
+            color: rgba(250, 240, 225, 0.7) !important;
             text-decoration: none !important;
-            font-size: 0.9rem !important;
+            font-size: 0.75rem !important;
             gap: 15px !important;
             visibility: visible !important;
+            letter-spacing: 1.5px !important;
+            text-transform: uppercase !important;
         }
-        .menu li a i {
+        #main-nav .menu li a i {
             display: inline-block !important;
             color: #E8B4B8 !important;
             width: 20px !important;
+            text-align: center !important;
+            font-size: 1rem !important;
+        }
+        #main-nav .menu li a:hover {
+            background-color: rgba(232, 180, 184, 0.08) !important;
+            color: #E8B4B8 !important;
+            padding-left: 30px !important;
         }
         .menu-toggle {
             display: block !important;
+            background: none !important;
+            border: 1px solid rgba(232, 180, 184, 0.3) !important;
+            color: #FAF0E1 !important;
+            padding: 8px 12px !important;
+            cursor: pointer !important;
+            border-radius: 4px !important;
         }
     }
 </style>
 <header>
-    <nav class="navbar">
+    <nav class="navbar" id="main-nav">
         <div class="logo">
             <a href="{% url 'home' %}">
                 <img src="{% static 'img/logo.png' %}" alt="Andrea Jiménez" class="logo-img">
@@ -65,7 +87,9 @@
         </ul>
 
         <div class="user-actions">
-            <button type="button" class="menu-toggle" aria-label="Abrir menú"><i class="fa-solid fa-bars" style="pointer-events: none;"></i></button>
+            <button type="button" class="menu-toggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars" style="pointer-events: none;"></i>
+            </button>
             {% if user.is_authenticated and es_cliente %}
                 <div class="cart">
                     <a href="{% url 'carrito' %}" aria-label="Bolsa de compras"><i class="fa-solid fa-bag-shopping"></i></a>
@@ -74,7 +98,7 @@
 
             {% if user.is_authenticated %}
                 <div class="dropdown">
-                    <button type="button" class="dropdown-btn" onclick="event.preventDefault(); this.parentElement.classList.toggle('active');">
+                    <button type="button" class="dropdown-btn">
                         <i class="fa-regular fa-user"></i> 
                         {% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}
                         <i class="fa-solid fa-chevron-down" style="font-size: 0.5rem; margin-left: 5px;"></i>
@@ -94,3 +118,43 @@
         </div>
     </nav>
 </header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mainNav = document.getElementById('main-nav');
+    const menu = mainNav.querySelector('.menu');
+    const menuToggle = mainNav.querySelector('.menu-toggle');
+    const userDropdown = mainNav.querySelector('.dropdown');
+    const userDropdownBtn = mainNav.querySelector('.dropdown-btn');
+
+    // Toggle menú móvil
+    if (menuToggle && menu) {
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            menu.classList.toggle('active');
+            if (userDropdown) userDropdown.classList.remove('active');
+        });
+    }
+
+    // Toggle dropdown usuario
+    if (userDropdownBtn && userDropdown) {
+        userDropdownBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            userDropdown.classList.toggle('active');
+            if (menu) menu.classList.remove('active');
+        });
+    }
+
+    // Cerrar al hacer clic fuera
+    document.addEventListener('click', function(event) {
+        if (menu && menu.classList.contains('active') && !menu.contains(event.target) && !menuToggle.contains(event.target)) {
+            menu.classList.remove('active');
+        }
+        if (userDropdown && userDropdown.classList.contains('active') && !userDropdown.contains(event.target)) {
+            userDropdown.classList.remove('active');
+        }
+    });
+});
+</script>
+
