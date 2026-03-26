@@ -107,8 +107,9 @@ class Prenda(models.Model):
     codigo_barras = models.CharField(max_length=50, unique=True, null=True, blank=True, db_index=True)
     barcode_image = models.ImageField(upload_to="barcodes/", null=True, blank=True)
 
-    # Destacados
+    # Destacados y Ofertas
     es_destacado = models.BooleanField(default=False)
+    es_oferta = models.BooleanField(default=False)
 
     # Soft delete profesional
     is_archived = models.BooleanField(default=False)

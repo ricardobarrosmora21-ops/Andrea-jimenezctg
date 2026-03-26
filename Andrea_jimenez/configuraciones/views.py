@@ -179,7 +179,11 @@ def tienda(request):
     })
 
 def oferta(request):
-    productos_qs = Prenda.objects.filter(is_archived=False, stock__gt=0, precio_descuento__isnull=False).order_by("-id")
+    productos_qs = Prenda.objects.filter(
+        Q(es_oferta=True) | Q(precio_descuento__isnull=False),
+        is_archived=False, 
+        stock__gt=0
+    ).order_by("-id")
     paginator = Paginator(productos_qs, 9)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
@@ -702,7 +706,7 @@ def panel_admin(request):
     meta_ventas_offset = 251.2 * (1 - (porcentaje_meta / 100))
 
     # Productos en Oferta
-    productos_oferta = Prenda.objects.filter(precio_descuento__isnull=False, is_archived=False).count()
+    productos_oferta = Prenda.objects.filter(Q(es_oferta=True) | Q(precio_descuento__isnull=False), is_archived=False).count()
     if total_productos > 0:
         ofertas_porcentaje = round(productos_oferta * 100 / total_productos, 1)
     else:
@@ -792,7 +796,7 @@ def gestion_productos(request):
 
     # Aplicar filtro de oferta
     if oferta_status == 'si':
-        productos_qs = productos_qs.filter(precio_descuento__isnull=False)
+        productos_qs = productos_qs.filter(Q(es_oferta=True) | Q(precio_descuento__isnull=False))
 
     # 2. Estadísticas para los mini-contadores (siempre sobre el total)
     total_productos = Prenda.objects.count()
@@ -843,6 +847,7 @@ def crear_producto(request):
         categoria_id = request.POST.get("categoria")
         imagen = request.FILES.get("imagen")
         es_destacado = request.POST.get("es_destacado") == "on"
+        es_oferta = request.POST.get("es_oferta") == "on"
 
         categoria = get_object_or_404(Categoria, id=categoria_id)
 
@@ -854,7 +859,8 @@ def crear_producto(request):
             stock=stock,
             categoria=categoria,
             imagen=imagen,
-            es_destacado=es_destacado
+            es_destacado=es_destacado,
+            es_oferta=es_oferta
         )
 
         messages.success(request, f"Producto '{nombre}' creado correctamente.")
@@ -883,6 +889,7 @@ def editar_producto(request, prenda_id):
         producto.stock = int(stock_str) if stock_str else 0
         
         producto.es_destacado = request.POST.get("es_destacado") == "on"
+        producto.es_oferta = request.POST.get("es_oferta") == "on"
         
         categoria_id = request.POST.get("categoria")
 
